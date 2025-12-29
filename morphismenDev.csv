@@ -1,0 +1,10 @@
+Rang,Morphismus-Typ,Bemerkung,Arithmetik-Kompositionen,Analysis-Kompositionen
+1,Identität,trivial, neutral für Komposition,Klassische Komposition,Klassische Komposition
+2,Set-Funktion,einfacher elementweiser Morphismus,Klassische Komposition,Klassische Komposition
+3,Inklusion,Teilobjekt einbetten,Funktor-Komposition / Mapping,Funktor-Komposition / Mapping
+4,Injektion / Surjektion / Bijektion,besondere Eigenschaft einer Funktion,Funktor-Komposition / Mapping,Funktor-Komposition / Mapping
+5,Endomorphismus,Morphismus auf sich selbst,Currying / partielle Anwendung,Currying / partielle Anwendung
+6,Komposition,Hintereinanderausführung,Klassische Komposition; Pipeline,Klassische Komposition; Pipeline
+7,Mono / Epi,abstrakte Injektionen / Surjektionen,Kleisli-Komposition (Effekte),Kleisli-Komposition (Effekte)
+8,Isomorphismus,invertierbar, strukturerhaltend,Isomorphismus,Isomorphismus
+9,Universal-Morphismus,Limiten, Pullbacks, Pushouts, hochabstrakt,Applicative-Komposition; Parallel,Applicative-Komposition; Parallel
