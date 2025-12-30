@@ -1,0 +1,10 @@
+🌟 The Definition
+​"Macros 📜, Addons 🔌, Plugins 🧩, Templates 📝, and limitations set by things like preprocessors ⚙️ or the programming of programming 💻 are all forms of Meta-Programming 🧠."
+​🔍 The Breakdown
+​That’s 💯% spot on! At its core, Meta-Programming is when a program has info about itself (or others) and can manipulate it—basically, programs 🤖 writing or upgrading other programs 🚀.
+Die Definition
+​"Makros 📜, Addons 🔌, Plugins 🧩, Templates 📝 und Limitierungen durch z. B. Präprozessoren ⚙️ oder die Programmierung von Programmierung 💻 sind Metaprogrammierung 🧠."
+​🔍 Die Analyse
+​Das ist zu 💯% korrekt! Im Kern ist Metaprogrammierung, wenn ein Programm Informationen über sich selbst (oder andere) hat und diese manipulieren kann – quasi Programme 🤖, die andere Programme schreiben oder tunen 🚀.
+
+
