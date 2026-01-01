@@ -1,0 +1,152 @@
+\documentclass[11pt]{article}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{amsmath, amssymb, amsthm, mathtools}
+\usepackage{geometry}
+\geometry{margin=3cm}
+
+\title{Typen perfektoider Strukturen}
+\author{}
+\date{}
+
+\begin{document}
+\maketitle
+
+\section*{1. Perfektoide Körper (Charakteristik $0$)}
+
+Ein nichtarchimedischer Körper $K$ (vollständig, topologischer Ring) heißt \emph{perfektoid}
+für eine feste Primzahl $p$, wenn
+\begin{enumerate}
+  \item $K$ ist $p$-adisch vollständig,
+  \item die Wertgruppe $|K^\times| \subset \mathbb{R}_{>0}$ ist $p$-divisibel,
+  \item der Frobenius auf
+  \[
+    \mathcal{O}_K/p := \{x\in\mathcal{O}_K \mid |x|\le 1\}/p
+  \]
+  surjektiv ist:
+  \[
+    \varphi : \mathcal{O}_K/p \to \mathcal{O}_K/p,\quad x\mapsto x^p.
+  \]
+\end{enumerate}
+
+Typisches Beispiel:
+\[
+  K
+  = \widehat{\mathbb{Q}_p(p^{1/p^\infty})}
+  = \widehat{\bigcup_{n\ge 0}\mathbb{Q}_p(p^{1/p^n})}.
+\]
+Auch $\mathbb{C}_p$ ist perfektoid.
+
+\bigskip
+
+\section*{2. Perfektoide Körper (Charakteristik $p$)}
+
+Ein Körper $K$ in Charakteristik $p$ heißt perfektoid, wenn
+\begin{itemize}
+  \item $K$ vollständig und nichtarchimedisch ist,
+  \item der Frobenius
+  \[
+    \varphi : \mathcal{O}_K \to \mathcal{O}_K,\quad x\mapsto x^p
+  \]
+  bijektiv ist.
+\end{itemize}
+
+Beispiel:
+\[
+  K = \mathbb{F}_p((t^{1/p^\infty}))
+  := \widehat{\bigcup_{n\ge 0}\mathbb{F}_p((t^{1/p^n}))}.
+\]
+
+\bigskip
+
+\section*{3. Tilt eines perfektoiden Körpers}
+
+Zu jedem perfektoiden Körper $K$ (Charakteristik $0$) existiert der \emph{Tilt}
+\[
+  K^\flat := \varprojlim_{x\mapsto x^p} K
+  = \{(x_0,x_1,\dotsc)\mid x_{n+1}^p = x_n\},
+\]
+mit komponentweiser Multiplikation und
+\[
+  (x_n)\oplus(y_n)
+  :=
+  \left(\lim_{m\to\infty}(x_{n+m}+y_{n+m})^{p^m}\right)_n.
+\]
+
+Dann gilt:
+\[
+  \mathrm{char}(K^\flat)=p, \qquad
+  |(K^\flat)^\times| = |K^\times|,
+\]
+und $K^\flat$ ist wiederum perfektoid. Es besteht eine Äquivalenz
+\[
+  \text{Perfektoide Körper in char }0
+  \;\longleftrightarrow\;
+  \text{Perfektoide Körper in char }p,
+\]
+kurz:
+\[
+  K \;\leftrightsquigarrow\; K^\flat.
+\]
+
+\bigskip
+
+\section*{4. Perfektoide Ringe}
+
+Ein \emph{perfektoider Ring} $A$ ist ein $p$-adisch vollständiger, uniformer Banachring mit
+\begin{enumerate}
+  \item $p\in A$ ist topologisch nilpotent,
+  \item der Frobenius
+  \[
+    \varphi : A/p \to A/p
+  \]
+  ist surjektiv,
+  \item es existiert $\varpi\in A$ mit
+  \[
+    \varpi^p \mid p
+    \quad\text{in }A,
+    \qquad |\varpi|<1.
+  \]
+\end{enumerate}
+
+Wichtige Unterklassen:
+\begin{itemize}
+  \item $p$-adisch vollständige perfektoide Ringe,
+  \item perfektoide Tate-Ringe,
+  \item torfreie vs.\ nicht-torfreie Varianten.
+\end{itemize}
+
+Typischer Ursprung:
+\[
+  A = \mathcal{O}_K,\quad
+  K \text{ perfektoider Körper.}
+\]
+
+\bigskip
+
+\section*{5. Strukturklassifikation}
+
+\[
+\boxed{
+\begin{aligned}
+\textbf{Perfektoide Strukturen}
+&=
+\begin{cases}
+\text{Körper} \\
+\qquad\begin{cases}
+\mathrm{char}=0 \\
+\mathrm{char}=p \\
+\text{Tilt-Paare }(K,K^\flat)
+\end{cases}\\[6pt]
+\text{Ringe}\\
+\qquad\begin{cases}
+p\text{-adisch vollständige perfektoide Ringe}\\
+\text{perfektoide Tate-Ringe}
+\end{cases}
+\end{cases}
+\end{aligned}
+}
+\]
+
+\end{document}
+
