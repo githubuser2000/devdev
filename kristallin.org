@@ -1,0 +1,47 @@
+* Kristalline Programmierung – Strukturdefinition
+
+** Grundelemente (Numerische Semantik)
+
+- *1 = Punkt* 📍
+- *2 = Ecke* 📐
+  - ab 3–4 auch *Kante* 🧱
+  - ab 5–6 *fest / hart* 💎
+- *3 = Haken* ✅
+- *4 = Gerade* 📏
+  - ohne festen Anfang und Ende
+- *5 = leerer Befehl* 💡
+  - ab 6 *Schachtel / Kapsel / Box* 📦
+  - ab 10 *Wirkung / Impuls* ⚡
+
+** Kristallines Programmierparadigma
+
+Kristalline Programmierung geht von *1 bis 4*  
+und besteht aus Boxen an CSV-Tabellen 🗃️,  
+die erst zusammen Befehle bilden 🧩.
+
+→ geringere Komplexität als imperatives Paradigma 📉.
+
+** Begründungen
+
+- Linearität = Gerade (4) 📏
+  - aus 2 und 2 📐
+  - aus 1 und 3 📍✅
+
+- Befehl = Fünf (5) 💡
+  - 1+4 📍📏
+  - 2+3 📐✅
+  - 1+1+1+2 📍📍📍📐
+
+Einzeln bewiesen 🔍 – alles für alles ♾️.
+
+** Paradigmen-Schwellen
+
+- ab 8: Kristallin 💎 + Library 📚
+- ab 12: Hierarchie / Werkzeugkoffer 🧰🌐
+
+** Entweder / Oder ⚖️
+
+- Prinzipien–Prinzipien: Regeln 📜, Moral 🕊️
+- Prinzipien–Kategorien: Gesetzestexte 📖📑
+- Kategorien–Prinzipien: Gesetzesarten 🗂️✨
+- Kategorie–Kategorien: Bibliotheken 🏛️📂

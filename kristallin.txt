@@ -1,0 +1,32 @@
+1=Punkt 📍, 2=Ecke 📐, ab 3 4 ist 2 auch Kante 🧱 ab 5 6 ist 2 fest hart 💎, 3 Haken ✅, 4 Gerade ohne festen Anfang Ende Linie ist Gerade 📏, 5 leerer Befehl 💡 und ab 6 ist 5 auch Schachtel Kapsel Box Schubfach 📦, ab 10 ist 5 auch Wirkung Impuls Bewirkung mit möglichem Resultat ⚡.
+​Kristalline Programmierung geht von 1 bis 4 und sind Boxen an csv Tabellen Schachteln 🗃️, die erst zusammen Befehle bilden 🧩, also deutlich geringere Komplexität, Schwierigkeit als Imperatives Programmier-Paradigma 📉.
+​Dass Linearität Gerade 4 ist 📏, liegt an 2 und 2 📐 und außerdem an 1 und 3 📍✅.
+​Dass Befehl die Fünf ist 💡, liegt an den Summanden des Befehls 1+4 📍📏, 2+3 📐✅, 1+1+1+2 📍📍📍📐, usw.
+​Das wird einzeln durch bewiesen 🔍, alles fuer alles ♾️.
+​Ab 8. ist es nicht nur kristallines Programmier-Paradigma 💎, sondern auch Bibliotheks Lib Include Programmierparadigma 📚 und ab 12 Hierarchie-Werkzeugkoffer-Koordinaten Programmier-Paradigma 🧰🌐.
+​Bibliotheks Lib Include 📖
+zu
+kristallin Tabellen unterscheide 📊:
+Gesetzestexte ⚖️, Gesetzestypen 📝, Regeln 📏, Typen von Libs 📂, Bibliotheken 🏛️, Typen von Dingen in Libs Include Bibliotheken 🏷️, Templating Generics 🧬, etc.
+​So kann ab dem 8. beide Programmierparadigmen ⚙️ und bis 12 nur eine der beiden bestehen bleiben ⏳, Tabellen Kristallin 🗄️, Library Bibliothek Include 📚, ab 12 dann Koordinaten Hierarchie Ordnung Werkzeugkoffer Programmierparadigma 🗺️🛠️.
+​Entweder oder ⚖️:
+Prinzipien-Prinzipien Regeln 📜, Moral 🕊️,
+Prinzipien-Kategorien Gesetzestexte Buch Paragraph Abschnitt 📖📑,
+Kategorien-Prinzipien Gesetzesarten Buch Art 🗂️✨,
+Kategorie-Kategorien Bibliotheken der Arten oder Arten von Büchereien Bibliotheken 🏛️📂.
+​1=Point 📍, 2=Corner 📐, from 3 4 on 2 is also Edge 🧱 from 5 6 on 2 is solid hard 💎, 3 Hook ✅, 4 Straight line without fixed start end line is Straight 📏, 5 empty command 💡 and from 6 on 5 is also Box Capsule Box Drawer 📦, from 10 on 5 is also Effect Impulse Causing with possible result ⚡.
+​Crystalline programming goes from 1 to 4 and are boxes on csv tables boxes 🗃️, which only together form commands 🧩, thus significantly lower complexity, difficulty than Imperative Programming Paradigm 📉.
+​That linearity is Straight 4 📏 is due to 2 and 2 📐 and also due to 1 and 3 📍✅.
+​That command is the Five 💡 is due to the summands of the command 1+4 📍📏, 2+3 📐✅, 1+1+1+2 📍📍📍📐, etc.
+​This is proven individually 🔍, everything for everything ♾️.
+​From 8th on it is not only crystalline programming paradigm 💎, but also Library Lib Include programming paradigm 📚 and from 12th Hierarchy-Toolbox-Coordinates programming paradigm 🧰🌐.
+​Library Lib Include 📖
+to
+crystalline tables distinguish 📊:
+Legal texts ⚖️, legal types 📝, rules 📏, types of libs 📂, libraries 🏛️, types of things in libs include libraries 🏷️, templating generics 🧬, etc.
+​Thus, from the 8th both programming paradigms ⚙️ and until 12 only one of the two can remain ⏳, Tables Crystalline 🗄️, Library Lib Include 📚, from 12 then Coordinates Hierarchy Order Toolbox programming paradigm 🗺️🛠️.
+​Either or ⚖️:
+Principles-Principles rules 📜, morals 🕊️,
+Principles-Categories legal texts book paragraph section 📖📑,
+Categories-Principles types of laws book type 🗂️✨,
+Category-Categories libraries of types or types of libraries libraries 🏛️📂.
