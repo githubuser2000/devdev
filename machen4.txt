@@ -1,0 +1,84 @@
+CrystallineTranscompiler/
+├── 01_Hierarchie_Coordinates_Simple/
+│   ├── hierarchy_c_simple.c
+│   ├── hierarchy_go_simple.go
+│   ├── hierarchy_zig_simple.zig
+├── 02_Hierarchie_Coordinates_Advanced/
+│   ├── hierarchy_c_adv.c
+│   ├── hierarchy_go_adv.go
+│   ├── hierarchy_zig_adv.zig
+├── 03_Hierarchie_Coordinates_Dimensional/
+│   ├── hierarchy_c_dim.c
+│   ├── hierarchy_go_dim.go
+│   ├── hierarchy_zig_dim.zig
+├── 04_Hierarchie_Coordinates_Variants/
+│   ├── hierarchy_c_var.c
+│   ├── hierarchy_go_var.go
+│   ├── hierarchy_zig_var.zig
+
+├── 05_Toolbox_Core/
+│   ├── toolbox_c_core.c
+│   ├── toolbox_go_core.go
+│   ├── toolbox_zig_core.zig
+├── 06_Toolbox_Modules/
+│   ├── toolbox_c_modules.c
+│   ├── toolbox_go_modules.go
+│   ├── toolbox_zig_modules.zig
+├── 07_Toolbox_Advanced/
+│   ├── toolbox_c_adv.c
+│   ├── toolbox_go_adv.go
+│   ├── toolbox_zig_adv.zig
+├── 08_Toolbox_Variants/
+│   ├── toolbox_c_var.c
+│   ├── toolbox_go_var.go
+│   ├── toolbox_zig_var.zig
+
+├── 09_LibInclude_Core/
+│   ├── lib_c_core.c
+│   ├── lib_go_core.go
+│   ├── lib_zig_core.zig
+├── 10_LibInclude_Types/
+│   ├── lib_c_types.c
+│   ├── lib_go_types.go
+│   ├── lib_zig_types.zig
+├── 11_LibInclude_Templating/
+│   ├── lib_c_templating.c
+│   ├── lib_go_templating.go
+│   ├── lib_zig_templating.zig
+├── 12_LibInclude_Generics/
+│   ├── lib_c_generics.c
+│   ├── lib_go_generics.go
+│   ├── lib_zig_generics.zig
+├── 13_LibInclude_Modules/
+│   ├── lib_c_modules.c
+│   ├── lib_go_modules.go
+│   ├── lib_zig_modules.zig
+├── 14_LibInclude_Advanced/
+│   ├── lib_c_adv.c
+│   ├── lib_go_adv.go
+│   ├── lib_zig_adv.zig
+├── 15_LibInclude_Variants/
+│   ├── lib_c_var.c
+│   ├── lib_go_var.go
+│   ├── lib_zig_var.zig
+├── 16_LibInclude_Experimental/
+│   ├── lib_c_exp.c
+│   ├── lib_go_exp.go
+│   ├── lib_zig_exp.zig
+
+├── 17_Perfectoid_Optimization_Simple/
+│   ├── perfectoid_c_simple.c
+│   ├── perfectoid_go_simple.go
+│   ├── perfectoid_zig_simple.zig
+├── 18_Perfectoid_Optimization_Advanced/
+│   ├── perfectoid_c_adv.c
+│   ├── perfectoid_go_adv.go
+│   ├── perfectoid_zig_adv.zig
+├── 19_Perfectoid_Optimization_Vectors/
+│   ├── perfectoid_c_vec.c
+│   ├── perfectoid_go_vec.go
+│   ├── perfectoid_zig_vec.zig
+├── 20_Perfectoid_Optimization_Variants/
+│   ├── perfectoid_c_var.c
+│   ├── perfectoid_go_var.go
+│   ├── perfectoid_zig_var.zig

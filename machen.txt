@@ -1,0 +1,45 @@
+erschaffe mir fuer 25 Transcompilerdateien die Datei Order Baumstruktur dieses Projektes mit 8 Dateisystemordner Namen fuer Unterscheidungen von und fuer Programmierparadigmen
+
+CrystallineTranscompiler/
+├── 01_Kristallin_Basic/
+│   ├── crystal_c_basic.c
+│   ├── crystal_go_basic.go
+│   ├── crystal_zig_basic.zig
+│   ├── crystal_c_arrays.c
+│   ├── crystal_go_arrays.go
+│   ├── crystal_zig_arrays.zig
+│
+├── 02_Kristallin_Command/
+│   ├── command_c.c
+│   ├── command_go.go
+│   ├── command_zig.zig
+│
+├── 03_Kristallin_Box/
+│   ├── box_c.c
+│   ├── box_go.go
+│   ├── box_zig.zig
+│
+├── 04_Kristallin_Winkel/
+│   ├── angle_c.c
+│   ├── angle_go.go
+│   ├── angle_zig.zig
+│
+├── 05_Kristallin_Raum/
+│   ├── space_c.c
+│   ├── space_go.go
+│   ├── space_zig.zig
+│
+├── 06_Bibliothek_LibInclude/
+│   ├── lib_c.c
+│   ├── lib_go.go
+│   ├── lib_zig.zig
+│
+├── 07_Hierarchie_Coordinates/
+│   ├── hierarchy_c.c
+│   ├── hierarchy_go.go
+│   ├── hierarchy_zig.zig
+│
+└── 08_Perfectoid_Optimization/
+    ├── perfectoid_c.c
+    ├── perfectoid_go.go
+    ├── perfectoid_zig.zig

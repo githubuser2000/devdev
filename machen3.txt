@@ -1,0 +1,136 @@
+CrystallineTranscompiler/
+├── 01_Kristallin_Basic_Atoms/
+│   ├── crystal_c_basic_atoms.c
+│   ├── crystal_go_basic_atoms.go
+│   ├── crystal_zig_basic_atoms.zig
+├── 02_Kristallin_Basic_Sums/
+│   ├── crystal_c_basic_sums.c
+│   ├── crystal_go_basic_sums.go
+│   ├── crystal_zig_basic_sums.zig
+├── 03_Kristallin_Basic_Arrays/
+│   ├── crystal_c_basic_arrays.c
+│   ├── crystal_go_basic_arrays.go
+│   ├── crystal_zig_basic_arrays.zig
+├── 04_Kristallin_Basic_Operations/
+│   ├── crystal_c_basic_ops.c
+│   ├── crystal_go_basic_ops.go
+│   ├── crystal_zig_basic_ops.zig
+
+├── 05_Kristallin_Command_Simple/
+│   ├── command_c_simple.c
+│   ├── command_go_simple.go
+│   ├── command_zig_simple.zig
+├── 06_Kristallin_Command_Boxed/
+│   ├── command_c_boxed.c
+│   ├── command_go_boxed.go
+│   ├── command_zig_boxed.zig
+├── 07_Kristallin_Command_Complex/
+│   ├── command_c_complex.c
+│   ├── command_go_complex.go
+│   ├── command_zig_complex.zig
+├── 08_Kristallin_Command_Variants/
+│   ├── command_c_variants.c
+│   ├── command_go_variants.go
+│   ├── command_zig_variants.zig
+
+├── 09_Kristallin_Box_Simple/
+│   ├── box_c_simple.c
+│   ├── box_go_simple.go
+│   ├── box_zig_simple.zig
+├── 10_Kristallin_Box_Encapsulated/
+│   ├── box_c_encapsulated.c
+│   ├── box_go_encapsulated.go
+│   ├── box_zig_encapsulated.zig
+├── 11_Kristallin_Box_Operations/
+│   ├── box_c_ops.c
+│   ├── box_go_ops.go
+│   ├── box_zig_ops.zig
+├── 12_Kristallin_Box_Variants/
+│   ├── box_c_variants.c
+│   ├── box_go_variants.go
+│   ├── box_zig_variants.zig
+
+├── 13_Kristallin_Winkel_Simple/
+│   ├── angle_c_simple.c
+│   ├── angle_go_simple.go
+│   ├── angle_zig_simple.zig
+├── 14_Kristallin_Winkel_Advanced/
+│   ├── angle_c_adv.c
+│   ├── angle_go_adv.go
+│   ├── angle_zig_adv.zig
+├── 15_Kristallin_Winkel_Vectors/
+│   ├── angle_c_vectors.c
+│   ├── angle_go_vectors.go
+│   ├── angle_zig_vectors.zig
+├── 16_Kristallin_Winkel_Operations/
+│   ├── angle_c_ops.c
+│   ├── angle_go_ops.go
+│   ├── angle_zig_ops.zig
+
+├── 17_Kristallin_Raum_Simple/
+│   ├── space_c_simple.c
+│   ├── space_go_simple.go
+│   ├── space_zig_simple.zig
+├── 18_Kristallin_Raum_Dimensional/
+│   ├── space_c_dim.c
+│   ├── space_go_dim.go
+│   ├── space_zig_dim.zig
+├── 19_Kristallin_Raum_Complex/
+│   ├── space_c_complex.c
+│   ├── space_go_complex.go
+│   ├── space_zig_complex.zig
+├── 20_Kristallin_Raum_Variants/
+│   ├── space_c_variants.c
+│   ├── space_go_variants.go
+│   ├── space_zig_variants.zig
+
+# ————— Bibliotheken erweitert —————
+├── 21_Bibliothek_LibInclude_Core/
+│   ├── lib_c_core.c
+│   ├── lib_go_core.go
+│   ├── lib_zig_core.zig
+├── 22_Bibliothek_LibInclude_Types/
+│   ├── lib_c_types.c
+│   ├── lib_go_types.go
+│   ├── lib_zig_types.zig
+├── 23_Bibliothek_LibInclude_Templating/
+│   ├── lib_c_templating.c
+│   ├── lib_go_templating.go
+│   ├── lib_zig_templating.zig
+├── 24_Bibliothek_LibInclude_Generics/
+│   ├── lib_c_generics.c
+│   ├── lib_go_generics.go
+│   ├── lib_zig_generics.zig
+├── 25_Bibliothek_LibInclude_Modules/
+│   ├── lib_c_modules.c
+│   ├── lib_go_modules.go
+│   ├── lib_zig_modules.zig
+├── 26_Bibliothek_LibInclude_Advanced/
+│   ├── lib_c_adv.c
+│   ├── lib_go_adv.go
+│   ├── lib_zig_adv.zig
+├── 27_Bibliothek_LibInclude_Variants/
+│   ├── lib_c_variants.c
+│   ├── lib_go_variants.go
+│   ├── lib_zig_variants.zig
+├── 28_Bibliothek_LibInclude_Experimental/
+│   ├── lib_c_exp.c
+│   ├── lib_go_exp.go
+│   ├── lib_zig_exp.zig
+
+├── 29_Hierarchie_Coordinates_Simple/
+│   ├── hierarchy_c_simple.c
+│   ├── hierarchy_go_simple.go
+│   ├── hierarchy_zig_simple.zig
+├── 30_Hierarchie_Coordinates_Advanced/
+│   ├── hierarchy_c_adv.c
+│   ├── hierarchy_go_adv.go
+│   ├── hierarchy_zig_adv.zig
+├── 31_Perfectoid_Optimization_Simple/
+│   ├── perfectoid_c_simple.c
+│   ├── perfectoid_go_simple.go
+│   ├── perfectoid_zig_simple.zig
+├── 32_Perfectoid_Optimization_Advanced/
+│   ├── perfectoid_c_adv.c
+│   ├── perfectoid_go_adv.go
+│   ├── perfectoid_zig_adv.zig
