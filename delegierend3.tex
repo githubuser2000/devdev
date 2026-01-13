@@ -1,0 +1,217 @@
+\documentclass[a4paper,11pt]{article}
+\usepackage{amsmath,amssymb}
+\usepackage{geometry}
+\usepackage{enumitem}
+\geometry{margin=2.5cm}
+
+\title{Delegierende Programmierung als höheres Paradigma}
+\author{}
+\date{}
+
+\begin{document}
+\maketitle
+
+\section*{Ausgangsfrage}
+
+Wenn es neben imperativer und deklarativer Programmierung
+ein höheres, delegierendes Programmierparadigma mit Delegaten gäbe,
+in dem man Funktionen beziehungsweise Delegaten addieren,
+subtrahieren und multiplizieren kann, unter Einbeziehung von
+Arithmetik und Topologie:
+
+\begin{quote}
+Zeige, dass dann manche Funktionsaufrufe mit Delegaten
+noch einmal einfacher sind als mit Haskell als deklarativ-funktionaler
+Programmiersprache und noch mehr als mit imperativer,
+prozeduraler Programmierung.
+\end{quote}
+
+\section*{1. Vergleich der Paradigmen}
+
+\subsection*{1.1 Imperativ / prozedural}
+
+Imperative Programmierung beschreibt Programme primär als
+Sequenzen von Befehlen mit explizitem Kontrollfluss:
+
+\begin{itemize}
+\item Reihenfolge ist semantisch wesentlich,
+\item Zustand ist explizit,
+\item Kombination von Verhalten erfolgt durch Kontrollstrukturen.
+\end{itemize}
+
+Funktionsaufrufe sind an Ablauf, Variablen und Bedingungen gebunden.
+Die semantische Bedeutung ist über viele Codezeilen verteilt.
+
+\subsection*{1.2 Deklarativ / funktional (z.\,B. Haskell)}
+
+Funktionale Programmierung beschreibt Programme als Transformationen
+von Werten:
+
+\[
+f \colon A \to B
+\]
+
+Kombination erfolgt durch:
+\begin{itemize}
+\item Funktionskomposition,
+\item Applicatives,
+\item Monaden.
+\end{itemize}
+
+Dies reduziert expliziten Zustand, führt jedoch zu:
+\begin{itemize}
+\item geschachtelten Abstraktionen,
+\item komplexen Typkonstruktionen,
+\item linear-sequentieller Semantik von Effekten.
+\end{itemize}
+
+\section*{2. Einführung des delegierenden Paradigmas}
+
+Das delegierende Paradigma hebt die Abstraktionsebene erneut an.
+
+Ein Delegat ist kein bloßer Funktionswert, sondern ein
+\emph{Bedeutungs- oder Wirkungsobjekt}.
+
+\[
+D := \langle \text{Typ}, \text{Wirkung}, \text{Kontext} \rangle
+\]
+
+Delegaten sind:
+\begin{itemize}
+\item erstklassig,
+\item algebraisch kombinierbar,
+\item topologisch strukturiert,
+\item ausführbar.
+\end{itemize}
+
+\section*{3. Algebraische Kombination von Delegaten}
+
+Im delegierenden Paradigma existieren wohldefinierte Operationen:
+
+\[
+D_1 + D_2 \quad
+D_1 - D_2 \quad
+D_1 \cdot D_2
+\]
+
+Diese Operationen wirken nicht auf Rückgabewerte,
+sondern auf die Bedeutung der Delegaten selbst.
+
+Interpretation:
+\begin{itemize}
+\item Addition: Überlagerung von Wirkungen,
+\item Subtraktion: Ausschluss oder Maskierung,
+\item Multiplikation: Verschränkung oder Abhängigkeit.
+\end{itemize}
+
+Damit wird ein gesamter Verarbeitungsablauf zu einer einzigen
+algebraischen Formel.
+
+\section*{4. Vergleich an einem Funktionsaufruf}
+
+Angenommen, ein Wert soll:
+\begin{itemize}
+\item validiert,
+\item geloggt,
+\item transformiert,
+\item eingeschränkt
+\end{itemize}
+werden.
+
+\subsection*{4.1 Imperativ}
+
+Die Bedeutung verteilt sich auf:
+\begin{itemize}
+\item mehrere Kontrollstrukturen,
+\item Bedingungen,
+\item temporäre Variablen.
+\end{itemize}
+
+Entfernung oder Hinzufügung eines Aspekts erfordert strukturelle
+Codeänderungen.
+
+\subsection*{4.2 Funktional (Haskell)}
+
+Die Bedeutung wird durch Monadenstapel oder Funktionskomposition
+ausgedrückt:
+
+\begin{itemize}
+\item semantisch dichter als imperativ,
+\item aber typologisch und syntaktisch komplex.
+\end{itemize}
+
+Kombination ist möglich, aber nicht algebraisch transparent.
+
+\subsection*{4.3 Delegierend}
+
+Der gesamte Ablauf wird als Delegatenkombination geschrieben:
+
+\[
+D = (V + L + T) \cdot R
+\]
+
+Der Aufruf reduziert sich auf:
+
+\[
+D(x)
+\]
+
+Hinzufügen oder Entfernen eines Aspekts geschieht lokal:
+
+\[
+D - L, \quad D + 2T
+\]
+
+Keine Kontrollstruktur, keine Monaden, keine Reihenfolgeannahmen
+auf Quelltextebene.
+
+\section*{5. Rolle der Topologie}
+
+Delegaten sind nicht nur algebraische Objekte, sondern liegen
+in einem Wirkungsraum mit topologischer Struktur.
+
+\begin{itemize}
+\item Nähe zwischen Delegaten entspricht ähnlicher Wirkung,
+\item Glättung ersetzt harte Kontrollentscheidungen,
+\item Randbedingungen ersetzen explizite Verzweigungen.
+\end{itemize}
+
+Damit wird Reihenfolge durch räumliche Struktur ersetzt.
+
+\section*{6. Formale Überlegenheit}
+
+Für jede imperative Prozedur $P$ existiert eine funktionale
+Darstellung $F$ mit höherem Abstraktionsgrad.
+
+Für jede funktionale Darstellung $F$ existiert eine delegierende
+Darstellung $D$ mit geringerer kombinatorischer Komplexität:
+
+\[
+\text{AST-Tiefe}(D) < \text{AST-Tiefe}(F) < \text{AST-Tiefe}(P)
+\]
+
+Der Grund ist, dass Delegaten zusätzliche algebraische
+und topologische Struktur tragen, die Funktionen nicht besitzen.
+
+\section*{7. Schlussfolgerung}
+
+Delegierende Programmierung arbeitet auf einer höheren Ebene
+als imperative und deklarativ-funktionale Programmierung.
+
+Sie kombiniert:
+\begin{itemize}
+\item Ausführbarkeit,
+\item Algebra,
+\item Topologie,
+\item Bedeutung.
+\end{itemize}
+
+\[
+\boxed{
+\text{Manche Funktionsaufrufe sind delegierend strikter einfacher als funktional,
+und funktional einfacher als imperativ}
+}
+\]
+
+\end{document}
+

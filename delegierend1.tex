@@ -1,0 +1,122 @@
+\documentclass[a4paper,11pt]{article}
+\usepackage{amsmath,amssymb}
+\usepackage{geometry}
+\geometry{margin=2.5cm}
+
+\title{Delegaten als Richtungen und Linearkombinationen}
+\author{}
+\date{}
+
+\begin{document}
+\maketitle
+
+\section*{1. Minimaldefinition eines Delegaten}
+
+Im einfachsten, nicht-trivialen Fall ist ein Delegat \emph{keine Funktion},
+sondern lediglich eine Richtung.
+
+\[
+D \in V
+\]
+
+wobei $V$ ein reeller Vektorraum ist.  
+Ein Delegat kann z.\,B. sein:
+\begin{itemize}
+\item ein Winkel $\theta \in [0,2\pi)$,
+\item ein normierter Richtungsvektor $v \in \mathbb{R}^n$,
+\item eine Richtung mit Intensität $\alpha v$.
+\end{itemize}
+
+In dieser Stufe besitzt der Delegat noch keine Ausführungssemantik,
+sondern beschreibt lediglich eine \emph{Tendenz} oder \emph{Wirkungsrichtung}.
+
+\section*{2. Kombination von Delegaten}
+
+Das Zusammenrechnen von Delegaten ist im einfachsten Fall
+\emph{keine Addition}, sondern eine \emph{Linearkombination}.
+
+\[
+D = \alpha \cdot D_1 + \beta \cdot D_2
+\]
+
+Dabei gelten:
+\begin{itemize}
+\item $\alpha, \beta \in \mathbb{R}$ als Gewichte,
+\item $D_1, D_2 \in V$ als Richtungsdelegaten,
+\item $D$ als resultierende Richtung.
+\end{itemize}
+
+Die gewöhnliche Addition ist der Spezialfall $\alpha = \beta = 1$.
+
+\section*{3. Interpretation}
+
+Die Linearkombination entspricht geometrisch der Überlagerung von Richtungen,
+vergleichbar mit:
+\begin{itemize}
+\item Kräften in der Physik,
+\item Gradientenfeldern,
+\item Vektorfeldern.
+\end{itemize}
+
+Programmatische Bedeutung entsteht hier nicht durch Reihenfolge,
+sondern durch Richtung, Gewicht und Überlagerung.
+
+\section*{4. Hierarchie der Delegaten}
+
+Es ergibt sich eine natürliche Skala:
+
+\subsection*{Stufe 0: Reine Richtung}
+\[
+D = \theta
+\]
+
+\subsection*{Stufe 1: Gewichtete Richtung}
+\[
+D = \alpha \cdot \theta
+\]
+
+\subsection*{Stufe 2: Linearkombination}
+\[
+D = \sum_i \alpha_i \cdot D_i
+\]
+
+\subsection*{Stufe 3: Richtungsfeld}
+\[
+D(x) = \sum_i \alpha_i(x) \cdot D_i
+\]
+
+\subsection*{Stufe 4: Ausführbarer Delegat}
+\[
+D(x) \mapsto \text{Wirkung}
+\]
+
+Funktionen treten erst in höheren Stufen auf und sind
+\emph{nicht grundlegend}.
+
+\section*{5. Topologische Aspekte}
+
+Durch die Interpretation als Richtungen ergeben sich natürliche
+topologische Begriffe:
+
+\begin{itemize}
+\item Nähe: kleiner Winkel zwischen Delegaten,
+\item Opposition: Winkel nahe $\pi$,
+\item Glättung: Mittelung mehrerer Richtungen,
+\item Rand: Diskontinuitäten im Richtungsfeld.
+\end{itemize}
+
+Topologie ist somit keine Zusatzstruktur,
+sondern folgt direkt aus der geometrischen Natur der Delegaten.
+
+\section*{6. Zusammenfassung}
+
+Ein Delegat ist im einfachsten Fall lediglich eine Richtung.
+Programmierung entsteht durch die Linearkombination vieler solcher Richtungen
+und erst in späteren Stufen durch deren Ausführung.
+
+\[
+\boxed{\text{Delegaten sind Vektoren, nicht primär Funktionen}}
+\]
+
+\end{document}
+
