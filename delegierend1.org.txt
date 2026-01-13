@@ -1,0 +1,115 @@
+#+TITLE: Delegaten als Richtungen und Linearkombinationen
+
+* 1. Minimaldefinition eines Delegaten
+
+Im einfachsten, nicht-trivialen Fall ist ein Delegat *keine Funktion*, sondern lediglich eine Richtung.
+
+#+BEGIN_LATEX
+\[
+D \in V
+\]
+#+END_LATEX
+
+wobei \(V\) ein reeller Vektorraum ist.  
+Ein Delegat kann z.\,B. sein:
+
+- ein Winkel \(\theta \in [0,2\pi)\)
+- ein normierter Richtungsvektor \(v \in \mathbb{R}^n\)
+- eine Richtung mit Intensität \(\alpha v\)
+
+In dieser Stufe besitzt der Delegat noch keine Ausführungssemantik, sondern beschreibt lediglich eine *Tendenz* oder *Wirkungsrichtung*.
+
+* 2. Kombination von Delegaten
+
+Das Zusammenrechnen von Delegaten ist im einfachsten Fall *keine Addition*, sondern eine *Linearkombination*.
+
+#+BEGIN_LATEX
+\[
+D = \alpha \cdot D_1 + \beta \cdot D_2
+\]
+#+END_LATEX
+
+Dabei gelten:
+
+- \(\alpha, \beta \in \mathbb{R}\) als Gewichte
+- \(D_1, D_2 \in V\) als Richtungsdelegaten
+- \(D\) als resultierende Richtung
+
+Die gewöhnliche Addition ist der Spezialfall \(\alpha = \beta = 1\).
+
+* 3. Interpretation
+
+Die Linearkombination entspricht geometrisch der Überlagerung von Richtungen, vergleichbar mit:
+
+- Kräften in der Physik
+- Gradientenfeldern
+- Vektorfeldern
+
+Programmatische Bedeutung entsteht hier nicht durch Reihenfolge, sondern durch Richtung, Gewicht und Überlagerung.
+
+* 4. Hierarchie der Delegaten
+
+Es ergibt sich eine natürliche Skala:
+
+** Stufe 0: Reine Richtung
+
+#+BEGIN_LATEX
+\[
+D = \theta
+\]
+#+END_LATEX
+
+** Stufe 1: Gewichtete Richtung
+
+#+BEGIN_LATEX
+\[
+D = \alpha \cdot \theta
+\]
+#+END_LATEX
+
+** Stufe 2: Linearkombination
+
+#+BEGIN_LATEX
+\[
+D = \sum_i \alpha_i \cdot D_i
+\]
+#+END_LATEX
+
+** Stufe 3: Richtungsfeld
+
+#+BEGIN_LATEX
+\[
+D(x) = \sum_i \alpha_i(x) \cdot D_i
+\]
+#+END_LATEX
+
+** Stufe 4: Ausführbarer Delegat
+
+#+BEGIN_LATEX
+\[
+D(x) \mapsto \text{Wirkung}
+\]
+#+END_LATEX
+
+Funktionen treten erst in höheren Stufen auf und sind *nicht grundlegend*.
+
+* 5. Topologische Aspekte
+
+Durch die Interpretation als Richtungen ergeben sich natürliche topologische Begriffe:
+
+- Nähe: kleiner Winkel zwischen Delegaten
+- Opposition: Winkel nahe \(\pi\)
+- Glättung: Mittelung mehrerer Richtungen
+- Rand: Diskontinuitäten im Richtungsfeld
+
+Topologie ist somit keine Zusatzstruktur, sondern folgt direkt aus der geometrischen Natur der Delegaten.
+
+* 6. Zusammenfassung
+
+Ein Delegat ist im einfachsten Fall lediglich eine Richtung. Programmierung entsteht durch die Linearkombination vieler solcher Richtungen und erst in späteren Stufen durch deren Ausführung.
+
+#+BEGIN_LATEX
+\[
+\boxed{\text{Delegaten sind Vektoren, nicht primär Funktionen}}
+\]
+#+END_LATEX

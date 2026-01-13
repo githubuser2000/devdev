@@ -1,0 +1,196 @@
+#+TITLE: Delegaten als universelle Wirkungsobjekte
+
+* 1. Ausgangsdefinition
+
+Ein Delegat ist kein bloßes Sprachkonstrukt, sondern ein *typisiertes, algebraisch-topologisches Wirkungsobjekt*,  
+das ausführbar, kombinierbar und hierarchisch einbettbar ist.
+
+Er ist mehr als:
+
+- ein Funktionszeiger
+- ein Lambda-Ausdruck
+- ein Interface
+- ein Callback
+- eine Monade
+
+Ein Delegat kann sein:
+
+- Funktionszeiger mit Typeninformationen, Generics und Templates
+- Grundrechenarten (Addition, Subtraktion, Multiplikation, Potenz, Logarithmus, Wurzel)
+- Winkel oder Richtungen
+- Boolesche Mengenoperationen
+- Operationen der Veränderung von Hierarchiestruktur und Koordinaten
+
+* 2. Minimaldefinition eines Delegaten (Richtung)
+
+Im einfachsten Fall ist ein Delegat *keine Funktion*, sondern lediglich eine Richtung.
+
+#+BEGIN_LATEX
+\[
+D \in V
+\]
+#+END_LATEX
+
+wobei \(V\) ein reeller Vektorraum ist. Beispiele:
+
+- Winkel \(\theta \in [0,2\pi)\)  
+- Normierter Richtungsvektor \(v \in \mathbb{R}^n\)  
+- Richtung mit Intensität \(\alpha v\)  
+
+Die Linearkombination mehrerer Richtungen bildet die erste Form der Delegatenprogrammierung:
+
+#+BEGIN_LATEX
+\[
+D = \alpha \cdot D_1 + \beta \cdot D_2
+\]
+#+END_LATEX
+
+* 3. Hierarchie der Delegaten
+
+Stufenmodell:
+
+** Stufe 0: Reine Richtung
+
+#+BEGIN_LATEX
+\[
+D = \theta
+\]
+#+END_LATEX
+
+** Stufe 1: Gewichtete Richtung
+
+#+BEGIN_LATEX
+\[
+D = \alpha \cdot \theta
+\]
+#+END_LATEX
+
+** Stufe 2: Linearkombination
+
+#+BEGIN_LATEX
+\[
+D = \sum_i \alpha_i \cdot D_i
+\]
+#+END_LATEX
+
+** Stufe 3: Richtungsfeld
+
+#+BEGIN_LATEX
+\[
+D(x) = \sum_i \alpha_i(x) \cdot D_i
+\]
+#+END_LATEX
+
+** Stufe 4: Ausführbarer Delegat
+
+#+BEGIN_LATEX
+\[
+D(x) \mapsto \text{Wirkung}
+\]
+#+END_LATEX
+
+* 4. Algebraische Dimension (Grundrechenarten)
+
+#+BEGIN_LATEX
+\[
+D_1 + D_2, \quad
+D_1 - D_2, \quad
+D_1 \cdot D_2, \quad
+D^n, \quad
+\log(D), \quad
+\sqrt{D}
+\]
+#+END_LATEX
+
+Interpretation:
+
+- Addition: Überlagerung von Wirkungen  
+- Subtraktion: Maskierung oder Ausschluss  
+- Multiplikation: Verschränkung oder Kopplung  
+- Potenz: Intensivierung oder Iteration  
+- Logarithmus: Dämpfung oder Kompression  
+- Wurzel: Abschwächung oder Entfaltung  
+
+* 5. Objekt- und Typ-Hierarchie
+
+Delegaten können an Objekte gebunden sein und in Vererbungshierarchien existieren:
+
+#+BEGIN_LATEX
+\[
+\text{Delegate}<T_{\text{in}}, T_{\text{out}}>
+\]
+#+END_LATEX
+
+Beispiele:
+
+#+BEGIN_LATEX
+\[
+\text{LoggingDelegate}<T>, \quad
+\text{SecurityDelegate}<T>, \quad
+\text{ValidationDelegate}<T>
+\]
+#+END_LATEX
+
+Delegaten können:
+
+- vererbt  
+- spezialisiert  
+- polymorph verwendet  
+- kombiniert werden  
+
+* 6. Topologische Dimension
+
+Natürliche topologische Begriffe ergeben sich aus der Interpretation als Richtungen:
+
+- Nähe: kleiner Winkel zwischen Delegaten  
+- Opposition: Winkel nahe \(\pi\)  
+- Glättung: Mittelung mehrerer Richtungen  
+- Rand: Diskontinuitäten im Richtungsfeld  
+
+#+BEGIN_LATEX
+\[
+\text{near}(D_1, D_2), \quad \text{smooth}(D)
+\]
+#+END_LATEX
+
+* 7. Erweiterte boolsche und hierarchische Dimension
+
+Ein Delegat kann auch boolesche Mengenoperationen oder Operationen der Veränderung von Hierarchiestruktur und Koordinaten ausführen:
+
+#+BEGIN_LATEX
+\[
+D := \langle T_{\text{in}} \to T_{\text{out}}, \mathcal{A}, \mathcal{T}, \mathcal{H}, \mathcal{B}, \mathcal{C} \rangle
+\]
+#+END_LATEX
+
+wobei:
+
+- \(\mathcal{A}\) Grundrechenarten  
+- \(\mathcal{T}\) Topologie  
+- \(\mathcal{H}\) Objekt- und Typ-Hierarchie  
+- \(\mathcal{B}\) boolsche Mengenoperationen (AND, OR, NOT)  
+- \(\mathcal{C}\) Operationen auf Hierarchien und Koordinaten  
+
+Beispielkombination:
+
+#+BEGIN_LATEX
+\[
+(D_1 \cup D_2) \cdot (\alpha \cdot D_3 + \beta D_4) \mapsto \text{veränderte Hierarchie oder Koordinaten}
+\]
+#+END_LATEX
+
+* 8. Zusammengefasste formale Definition
+
+#+BEGIN_LATEX
+\[
+D := \langle T_{\text{in}} \to T_{\text{out}}, \mathcal{A}, \mathcal{T}, \mathcal{H}, \mathcal{B}, \mathcal{C} \rangle
+\]
+#+END_LATEX
+
+* 9. Schlussaussage
+
+#+BEGIN_LATEX
+\[
+\boxed{\text{Delegaten sind kombinierbare, universelle Wirkungsobjekte: Funktionen, Richtungen, Logik und Hierarchie zugleich}}
+\]
+#+END_LATEX

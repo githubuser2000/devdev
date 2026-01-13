@@ -1,0 +1,56 @@
+Ein Delegat kann nicht nur Grundrechenarten Winkelrichtung Funktionszeiger sein, sondern auch boolsche Mengenoperationen oder Operationen der Veränderung von Hierarchiestruktur und damit Koordinaten.
+
+Das bedeutet, dass Funktionszeiger voneinander zueinander werden können: addiert, subtrahiert, multipliziert, dividiert, potenziert, gewurzelt, logarithmus auf 2 Arten der Variablenzuordnung wo welche Variable.
+
+* 10. Algebraische Operationen zwischen Funktionszeigern
+
+Ein Delegat (Funktionszeiger) kann zueinander **arithmetisch kombiniert** werden:
+
+- Addition, Subtraktion, Multiplikation, Division  
+- Potenz, Wurzel, Logarithmus  
+
+Dies gilt nicht nur auf den Rückgabewerten, sondern auf die Delegaten selbst.
+
+#+BEGIN_LATEX
+\[
+D_1 \,\text{op}\, D_2, \quad \text{op} \in \{ +, -, \cdot, /, ^, \sqrt{}, \log \}
+\]
+#+END_LATEX
+
+* 10.1 Variablenzuordnung
+
+Operationen können auf **zwei Arten von Variablenzuordnungen** erfolgen:
+
+1. **Parallele Anwendung:** Jede Variable \(x_i\) wird direkt an den entsprechenden Delegaten übergeben:
+
+#+BEGIN_LATEX
+\[
+(D_1 + D_2)(x_1, x_2) := D_1(x_1) + D_2(x_2)
+\]
+#+END_LATEX
+
+2. **Kombinierte Anwendung:** Variablen werden auf eine beliebige Menge von Delegaten verteilt, z. B. zur Interpolation, Kreuzwirkung oder komplexer Verkettung:
+
+#+BEGIN_LATEX
+\[
+(D_1 + D_2)(x) := D_1(f_1(x)) + D_2(f_2(x))
+\]
+#+END_LATEX
+
+Hierbei sind \(f_1, f_2\) **Abbildungen der Eingangsdaten** auf die jeweiligen Delegaten.  
+Damit entstehen komplexe Wirkungsoperatoren, die **funktionsübergreifend kombiniert, gewichtet, verschränkt und transformiert** werden können.
+
+* 10.2 Bedeutung
+
+Diese algebraischen Operatoren erlauben:
+
+- **Kombination von Logik und Rechenoperationen**  
+- **Hierarchische Verschachtelung von Delegaten**  
+- **Topologische Überlagerung von Wirkungen**  
+- **Variablenabhängige Interaktionen**  
+
+#+BEGIN_LATEX
+\[
+(D_1 \cdot D_2 + \sqrt{D_3}) \circ (D_4 \cup D_5) \mapsto \text{komplexe Wirkungsstruktur}
+\]
+#+END_LATEX

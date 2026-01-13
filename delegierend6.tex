@@ -1,0 +1,209 @@
+\documentclass[a4paper,11pt]{article}
+\usepackage{amsmath,amssymb}
+\usepackage{geometry}
+\geometry{margin=2.5cm}
+
+\title{Delegaten als universelle Wirkungsobjekte}
+\author{}
+\date{}
+
+\begin{document}
+\maketitle
+
+\section*{1. Ausgangsdefinition}
+
+Ein Delegat ist kein bloßes Sprachkonstrukt, sondern ein \emph{typisiertes, algebraisch-topologisches Wirkungsobjekt},  
+das ausführbar, kombinierbar und hierarchisch einbettbar ist.
+
+Er ist mehr als:
+
+\begin{itemize}
+    \item ein Funktionszeiger
+    \item ein Lambda-Ausdruck
+    \item ein Interface
+    \item ein Callback
+    \item eine Monade
+\end{itemize}
+
+Ein Delegat kann sein:
+
+\begin{itemize}
+    \item Funktionszeiger mit Typeninformationen, Generics und Templates
+    \item Grundrechenarten (Addition, Subtraktion, Multiplikation, Potenz, Logarithmus, Wurzel)
+    \item Winkel oder Richtungen
+    \item Boolesche Mengenoperationen
+    \item Operationen der Veränderung von Hierarchiestruktur und Koordinaten
+\end{itemize}
+
+\section*{2. Minimaldefinition eines Delegaten (Richtung)}
+
+Im einfachsten Fall ist ein Delegat \emph{keine Funktion}, sondern lediglich eine Richtung.
+
+\[
+D \in V
+\]
+
+wobei \(V\) ein reeller Vektorraum ist. Beispiele:
+
+\begin{itemize}
+    \item Winkel \(\theta \in [0,2\pi)\)
+    \item normierter Richtungsvektor \(v \in \mathbb{R}^n\)
+    \item Richtung mit Intensität \(\alpha v\)
+\end{itemize}
+
+Linearkombination mehrerer Richtungen:
+
+\[
+D = \alpha \cdot D_1 + \beta \cdot D_2
+\]
+
+\section*{3. Hierarchie der Delegaten}
+
+\textbf{Stufenmodell:}
+
+\textbf{Stufe 0: Reine Richtung}
+\[
+D = \theta
+\]
+
+\textbf{Stufe 1: Gewichtete Richtung}
+\[
+D = \alpha \cdot \theta
+\]
+
+\textbf{Stufe 2: Linearkombination}
+\[
+D = \sum_i \alpha_i \cdot D_i
+\]
+
+\textbf{Stufe 3: Richtungsfeld}
+\[
+D(x) = \sum_i \alpha_i(x) \cdot D_i
+\]
+
+\textbf{Stufe 4: Ausführbarer Delegat}
+\[
+D(x) \mapsto \text{Wirkung}
+\]
+
+\section*{4. Algebraische Dimension (Grundrechenarten)}
+
+\[
+D_1 + D_2, \quad
+D_1 - D_2, \quad
+D_1 \cdot D_2, \quad
+D^n, \quad
+\log(D), \quad
+\sqrt{D}
+\]
+
+Interpretation:
+
+\begin{itemize}
+    \item Addition: Überlagerung von Wirkungen
+    \item Subtraktion: Maskierung oder Ausschluss
+    \item Multiplikation: Verschränkung oder Kopplung
+    \item Potenz: Intensivierung oder Iteration
+    \item Logarithmus: Dämpfung oder Kompression
+    \item Wurzel: Abschwächung oder Entfaltung
+\end{itemize}
+
+\section*{5. Objekt- und Typ-Hierarchie}
+
+Delegaten können an Objekte gebunden sein und in Vererbungshierarchien existieren:
+
+\[
+\text{Delegate}<T_{\text{in}}, T_{\text{out}}>
+\]
+
+Beispiele:
+
+\[
+\text{LoggingDelegate}<T>, \quad
+\text{SecurityDelegate}<T>, \quad
+\text{ValidationDelegate}<T>
+\]
+
+Delegaten können vererbt, spezialisiert, polymorph verwendet und kombiniert werden.
+
+\section*{6. Topologische Dimension}
+
+Natürliche topologische Begriffe ergeben sich aus der Interpretation als Richtungen:
+
+\begin{itemize}
+    \item Nähe: kleiner Winkel zwischen Delegaten
+    \item Opposition: Winkel nahe \(\pi\)
+    \item Glättung: Mittelung mehrerer Richtungen
+    \item Rand: Diskontinuitäten im Richtungsfeld
+\end{itemize}
+
+\[
+\text{near}(D_1, D_2), \quad \text{smooth}(D)
+\]
+
+\section*{7. Erweiterte boolsche und hierarchische Dimension}
+
+Ein Delegat kann auch boolesche Mengenoperationen oder Operationen der Veränderung von Hierarchiestruktur und Koordinaten ausführen:
+
+\[
+D := \langle T_{\text{in}} \to T_{\text{out}}, \mathcal{A}, \mathcal{T}, \mathcal{H}, \mathcal{B}, \mathcal{C} \rangle
+\]
+
+wobei:
+
+\begin{itemize}
+    \item \(\mathcal{A}\) Grundrechenarten
+    \item \(\mathcal{T}\) Topologie
+    \item \(\mathcal{H}\) Objekt- und Typ-Hierarchie
+    \item \(\mathcal{B}\) boolsche Mengenoperationen (AND, OR, NOT)
+    \item \(\mathcal{C}\) Operationen auf Hierarchien und Koordinaten
+\end{itemize}
+
+Beispiel:
+
+\[
+(D_1 \cup D_2) \cdot (\alpha \cdot D_3 + \beta D_4) \mapsto \text{veränderte Hierarchie oder Koordinaten}
+\]
+
+\section*{8. Algebraische Operationen zwischen Funktionszeigern}
+
+Funktionszeiger können zueinander arithmetisch kombiniert werden, nicht nur auf Rückgabewerten, sondern auf den Delegaten selbst:
+
+\[
+D_1 \,\text{op}\, D_2, \quad \text{op} \in \{ +, -, \cdot, /, ^, \sqrt{}, \log \}
+\]
+
+\subsection*{8.1 Variablenzuordnung}
+
+1. \textbf{Parallele Anwendung:} Jede Variable \(x_i\) wird direkt an den entsprechenden Delegaten übergeben:
+
+\[
+(D_1 + D_2)(x_1, x_2) := D_1(x_1) + D_2(x_2)
+\]
+
+2. \textbf{Kombinierte Anwendung:} Variablen werden auf eine beliebige Menge von Delegaten verteilt:
+
+\[
+(D_1 + D_2)(x) := D_1(f_1(x)) + D_2(f_2(x))
+\]
+
+mit \(f_1, f_2\) als Abbildungen der Eingangsdaten.
+
+\[
+(D_1 \cdot D_2 + \sqrt{D_3}) \circ (D_4 \cup D_5) \mapsto \text{komplexe Wirkungsstruktur}
+\]
+
+\section*{9. Zusammengefasste formale Definition}
+
+\[
+D := \langle T_{\text{in}} \to T_{\text{out}}, \mathcal{A}, \mathcal{T}, \mathcal{H}, \mathcal{B}, \mathcal{C} \rangle
+\]
+
+\section*{10. Schlussaussage}
+
+\[
+\boxed{\text{Delegaten sind kombinierbare, universelle Wirkungsobjekte: Funktionen, Richtungen, Logik und Hierarchie zugleich}}
+\]
+
+\end{document}
+

@@ -1,0 +1,35 @@
+* Erweiterte Delegatdefinition
+
+Ein Delegat kann nicht nur Grundrechenarten, Winkelrichtung oder Funktionszeiger sein,  
+sondern auch **boolsche Mengenoperationen** oder **Operationen der Veränderung von Hierarchiestruktur** und damit Koordinaten.
+
+#+BEGIN_LATEX
+\[
+D := \langle T_{\text{in}} \to T_{\text{out}}, \mathcal{A}, \mathcal{T}, \mathcal{H}, \mathcal{B}, \mathcal{C} \rangle
+\]
+#+END_LATEX
+
+wobei:
+
+- \(\mathcal{A}\) die algebraische Struktur der Grundrechenarten darstellt  
+- \(\mathcal{T}\) die Topologie der Delegaten beschreibt  
+- \(\mathcal{H}\) die Objekt- und Typ-Hierarchie abbildet  
+- \(\mathcal{B}\) boolsche Mengenoperationen erlaubt (AND, OR, NOT, etc.)  
+- \(\mathcal{C}\) Operationen auf Hierarchien und Koordinaten enthält  
+
+Diese Erweiterung zeigt, dass Delegaten **mehrdimensionale Wirkungsobjekte** sind:  
+nicht nur Funktionen oder Richtungen, sondern kombinierbare, formale Operatoren in **arithmetischer, geometrischer, logischer und hierarchischer Dimension**.
+
+#+BEGIN_LATEX
+\[
+(D_1 \cup D_2) \cdot (\alpha \cdot D_3 + \beta D_4) \mapsto \text{veränderte Hierarchie oder Koordinaten}
+\]
+#+END_LATEX
+
+Interpretation:
+
+- Boolesche Operationen (\(\cup, \cap, \neg\)) für Mengen von Delegaten  
+- Linearkombinationen für Gewichtung von Richtungen oder Intensitäten  
+- Multiplikation oder Verkettung für kausale oder hierarchische Effekte  
+
+Damit werden Delegaten **wirklich universelle Operatoren**, die Arithmetik, Topologie, Logik und Hierarchie gleichzeitig modellieren.

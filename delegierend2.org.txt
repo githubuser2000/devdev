@@ -1,0 +1,161 @@
+#+TITLE: Der Delegat als algebraisch-topologisches Wirkungsobjekt
+
+* Ausgangsfrage
+
+Ein Delegat kann ein Funktionszeiger mit Typeninformationen, Generics und Templates sein.  
+Ein Delegat können auch die vier Grundrechenarten mit Potenz, Logarithmus und Wurzel sein.  
+Als Drittes kann ein Delegat zu einem Objekt gehören, welches sich in einer Vererbungshierarchie befinden darf, weswegen Templates und Generics wichtig sind.  
+Der Delegat darf als Viertes ``zu einer Arithmetik, zu einer Topologie, Topographie'', drei in einem, gehören.
+
+* 1. Grundthese
+
+Ein Delegat ist kein bloßes Sprachkonstrukt, sondern ein *typisiertes, algebraisch-topologisches Wirkungsobjekt*, das ausführbar, kombinierbar und hierarchisch einbettbar ist.
+
+Er ist damit mehr als:
+
+- ein Funktionszeiger
+- ein Lambda-Ausdruck
+- ein Interface
+- ein Callback
+- eine Monade
+
+* 2. Erste Dimension: Delegat als typisierter Funktionszeiger
+
+Ein Delegat besitzt eine vollständige Typinformation:
+
+#+BEGIN_LATEX
+\[
+D \colon T_{\text{in}} \to T_{\text{out}}
+\]
+#+END_LATEX
+
+Er ist:
+
+- erstklassig
+- aufrufbar
+- generisch parametrisierbar
+- templatefähig
+
+Beispiele:
+
+#+BEGIN_LATEX
+\[
+D<int, float>, \quad D<T, T>, \quad D<User, Result>
+\]
+#+END_LATEX
+
+Diese Ebene entspricht der funktionalen Grundlage des Delegaten.
+
+* 3. Zweite Dimension: Delegat als algebraisches Objekt
+
+Ein Delegat ist Element einer Algebra und erlaubt arithmetische Operationen *auf seiner Bedeutung*, nicht nur auf seinen Rückgabewerten.
+
+#+BEGIN_LATEX
+\[
+D_1 + D_2, \quad
+D_1 - D_2, \quad
+D_1 \cdot D_2, \quad
+D^n, \quad
+\log(D), \quad
+\sqrt{D}
+\]
+#+END_LATEX
+
+Interpretation:
+
+- Addition: Überlagerung von Wirkungen
+- Subtraktion: Maskierung oder Ausschluss
+- Multiplikation: Verschränkung oder Kopplung
+- Potenz: Intensivierung oder Iteration
+- Logarithmus: Dämpfung oder Kompression
+- Wurzel: Abschwächung oder Entfaltung
+
+* 4. Dritte Dimension: Delegat als Objekt in einer Hierarchie
+
+Ein Delegat kann an ein Objekt gebunden sein und Teil einer Vererbungshierarchie werden:
+
+#+BEGIN_LATEX
+\[
+\text{Delegate}<T_{\text{in}}, T_{\text{out}}>
+\]
+#+END_LATEX
+
+Beispiele:
+
+#+BEGIN_LATEX
+\[
+\text{LoggingDelegate}<T>, \quad
+\text{SecurityDelegate}<T>, \quad
+\text{ValidationDelegate}<T>
+\]
+#+END_LATEX
+
+Delegaten können:
+
+- vererbt
+- spezialisiert
+- polymorph verwendet
+- kombiniert
+
+* 5. Vierte Dimension: Arithmetik, Topologie und Topographie
+
+Ein Delegat gehört gleichzeitig zu drei mathematischen Strukturebenen:
+
+** 5.1 Arithmetik
+
+- Gewichtung
+- Skalierung
+- Kombination
+- Intensität
+
+** 5.2 Topologie
+
+- Nähe zwischen Delegaten
+- Offenheit und Geschlossenheit
+- Randbedingungen
+- Glättung von Übergängen
+
+Beispiel:
+
+#+BEGIN_LATEX
+\[
+\text{near}(D_1, D_2), \quad \text{smooth}(D)
+\]
+#+END_LATEX
+
+** 5.3 Topographie
+
+- Höhe: Priorität
+- Steigung: Änderungsrate
+- Becken: Einflussbereich
+- Pfade: Wirkungsverläufe
+
+* 6. Zusammengefasste formale Definition
+
+#+BEGIN_LATEX
+\[
+D := \langle T_{\text{in}} \to T_{\text{out}}, \mathcal{A}, \mathcal{T}, \mathcal{H} \rangle
+\]
+#+END_LATEX
+
+wobei:
+
+- \(\mathcal{A}\) eine algebraische Struktur
+- \(\mathcal{T}\) eine Topologie
+- \(\mathcal{H}\) eine Objekt- und Typ-Hierarchie darstellen
+
+Ein kombinierter Delegat wird direkt aufgerufen durch:
+
+#+BEGIN_LATEX
+\[
+(D_1 + \alpha D_2 - D_3) \cdot R(x)
+\]
+#+END_LATEX
+
+* 7. Schlussaussage
+
+#+BEGIN_LATEX
+\[
+\boxed{\text{Delegaten sind kombinierbare Bedeutungsfelder, nicht bloß Funktionen}}
+\]
+#+END_LATEX
