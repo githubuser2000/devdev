@@ -1,0 +1,273 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="" xml:lang="">
+<head>
+  <meta charset="utf-8" />
+  <meta name="generator" content="pandoc" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+  <title>Delegaten als universelle Wirkungsobjekte</title>
+  <style>
+    html {
+      line-height: 1.5;
+      font-family: Georgia, serif;
+      font-size: 20px;
+      color: #1a1a1a;
+      background-color: #fdfdfd;
+    }
+    body {
+      margin: 0 auto;
+      max-width: 36em;
+      padding-left: 50px;
+      padding-right: 50px;
+      padding-top: 50px;
+      padding-bottom: 50px;
+      hyphens: auto;
+      overflow-wrap: break-word;
+      text-rendering: optimizeLegibility;
+      font-kerning: normal;
+    }
+    @media (max-width: 600px) {
+      body {
+        font-size: 0.9em;
+        padding: 1em;
+      }
+      h1 {
+        font-size: 1.8em;
+      }
+    }
+    @media print {
+      body {
+        background-color: transparent;
+        color: black;
+        font-size: 12pt;
+      }
+      p, h2, h3 {
+        orphans: 3;
+        widows: 3;
+      }
+      h2, h3, h4 {
+        page-break-after: avoid;
+      }
+    }
+    p {
+      margin: 1em 0;
+    }
+    a {
+      color: #1a1a1a;
+    }
+    a:visited {
+      color: #1a1a1a;
+    }
+    img {
+      max-width: 100%;
+    }
+    h1, h2, h3, h4, h5, h6 {
+      margin-top: 1.4em;
+    }
+    h5, h6 {
+      font-size: 1em;
+      font-style: italic;
+    }
+    h6 {
+      font-weight: normal;
+    }
+    ol, ul {
+      padding-left: 1.7em;
+      margin-top: 1em;
+    }
+    li > ol, li > ul {
+      margin-top: 0;
+    }
+    blockquote {
+      margin: 1em 0 1em 1.7em;
+      padding-left: 1em;
+      border-left: 2px solid #e6e6e6;
+      color: #606060;
+    }
+    code {
+      font-family: Menlo, Monaco, 'Lucida Console', Consolas, monospace;
+      font-size: 85%;
+      margin: 0;
+    }
+    pre {
+      margin: 1em 0;
+      overflow: auto;
+    }
+    pre code {
+      padding: 0;
+      overflow: visible;
+      overflow-wrap: normal;
+    }
+    .sourceCode {
+     background-color: transparent;
+     overflow: visible;
+    }
+    hr {
+      background-color: #1a1a1a;
+      border: none;
+      height: 1px;
+      margin: 1em 0;
+    }
+    table {
+      margin: 1em 0;
+      border-collapse: collapse;
+      width: 100%;
+      overflow-x: auto;
+      display: block;
+      font-variant-numeric: lining-nums tabular-nums;
+    }
+    table caption {
+      margin-bottom: 0.75em;
+    }
+    tbody {
+      margin-top: 0.5em;
+      border-top: 1px solid #1a1a1a;
+      border-bottom: 1px solid #1a1a1a;
+    }
+    th {
+      border-top: 1px solid #1a1a1a;
+      padding: 0.25em 0.5em 0.25em 0.5em;
+    }
+    td {
+      padding: 0.125em 0.5em 0.25em 0.5em;
+    }
+    header {
+      margin-bottom: 4em;
+      text-align: center;
+    }
+    #TOC li {
+      list-style: none;
+    }
+    #TOC ul {
+      padding-left: 1.3em;
+    }
+    #TOC > ul {
+      padding-left: 0;
+    }
+    #TOC a:not(:hover) {
+      text-decoration: none;
+    }
+    code{white-space: pre-wrap;}
+    span.smallcaps{font-variant: small-caps;}
+    div.columns{display: flex; gap: min(4vw, 1.5em);}
+    div.column{flex: auto; overflow-x: auto;}
+    div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+    ul.task-list{list-style: none;}
+    ul.task-list li input[type="checkbox"] {
+      width: 0.8em;
+      margin: 0 0.8em 0.2em -1.6em;
+      vertical-align: middle;
+    }
+    .display.math{display: block; text-align: center; margin: 0.5rem auto;}
+  </style>
+  <!--[if lt IE 9]>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv-printshiv.min.js"></script>
+  <![endif]-->
+</head>
+<body>
+<header id="title-block-header">
+<h1 class="title">Delegaten als universelle Wirkungsobjekte</h1>
+</header>
+<h1 id="ausgangsdefinition">1. Ausgangsdefinition</h1>
+<p>Ein Delegat ist kein bloßes Sprachkonstrukt, sondern ein
+<strong>typisiertes, algebraisch-topologisches Wirkungsobjekt</strong>,
+das ausführbar, kombinierbar und hierarchisch einbettbar ist.</p>
+<p>Er ist mehr als:</p>
+<ul>
+<li>ein Funktionszeiger</li>
+<li>ein Lambda-Ausdruck</li>
+<li>ein Interface</li>
+<li>ein Callback</li>
+<li>eine Monade</li>
+</ul>
+<p>Ein Delegat kann sein:</p>
+<ul>
+<li>Funktionszeiger mit Typeninformationen, Generics und Templates</li>
+<li>Grundrechenarten (Addition, Subtraktion, Multiplikation, Potenz,
+Logarithmus, Wurzel)</li>
+<li>Winkel oder Richtungen</li>
+<li>Boolesche Mengenoperationen</li>
+<li>Operationen der Veränderung von Hierarchiestruktur und
+Koordinaten</li>
+</ul>
+<h1 id="minimaldefinition-eines-delegaten-richtung">2. Minimaldefinition
+eines Delegaten (Richtung)</h1>
+<p>Im einfachsten Fall ist ein Delegat <strong>keine Funktion</strong>,
+sondern lediglich eine Richtung.</p>
+<p>wobei <span class="math inline"><em>V</em></span> ein reeller
+Vektorraum ist. Beispiele:</p>
+<ul>
+<li>Winkel <span
+class="math inline"><em>θ</em> ∈ [0, 2<em>π</em>)</span></li>
+<li>Normierter Richtungsvektor <span
+class="math inline"><em>v</em> ∈ ℝ<sup><em>n</em></sup></span></li>
+<li>Richtung mit Intensität <span
+class="math inline"><em>α</em><em>v</em></span></li>
+</ul>
+<p>Die Linearkombination mehrerer Richtungen bildet die erste Form der
+Delegatenprogrammierung:</p>
+<h1 id="hierarchie-der-delegaten">3. Hierarchie der Delegaten</h1>
+<p>Stufenmodell:</p>
+<h2 id="stufe-0-reine-richtung">Stufe 0: Reine Richtung</h2>
+
+<h2 id="stufe-1-gewichtete-richtung">Stufe 1: Gewichtete Richtung</h2>
+
+<h2 id="stufe-2-linearkombination">Stufe 2: Linearkombination</h2>
+
+<h2 id="stufe-3-richtungsfeld">Stufe 3: Richtungsfeld</h2>
+
+<h2 id="stufe-4-ausführbarer-delegat">Stufe 4: Ausführbarer Delegat</h2>
+
+<h1 id="algebraische-dimension-grundrechenarten">4. Algebraische
+Dimension (Grundrechenarten)</h1>
+<p>Interpretation:</p>
+<ul>
+<li>Addition: Überlagerung von Wirkungen</li>
+<li>Subtraktion: Maskierung oder Ausschluss</li>
+<li>Multiplikation: Verschränkung oder Kopplung</li>
+<li>Potenz: Intensivierung oder Iteration</li>
+<li>Logarithmus: Dämpfung oder Kompression</li>
+<li>Wurzel: Abschwächung oder Entfaltung</li>
+</ul>
+<h1 id="objekt--und-typ-hierarchie">5. Objekt- und Typ-Hierarchie</h1>
+<p>Delegaten können an Objekte gebunden sein und in
+Vererbungshierarchien existieren:</p>
+<p>Beispiele:</p>
+<p>Delegaten können:</p>
+<ul>
+<li>vererbt</li>
+<li>spezialisiert</li>
+<li>polymorph verwendet</li>
+<li>kombiniert werden</li>
+</ul>
+<h1 id="topologische-dimension">6. Topologische Dimension</h1>
+<p>Natürliche topologische Begriffe ergeben sich aus der Interpretation
+als Richtungen:</p>
+<ul>
+<li>Nähe: kleiner Winkel zwischen Delegaten</li>
+<li>Opposition: Winkel nahe <span
+class="math inline"><em>π</em></span></li>
+<li>Glättung: Mittelung mehrerer Richtungen</li>
+<li>Rand: Diskontinuitäten im Richtungsfeld</li>
+</ul>
+<h1 id="erweiterte-boolsche-und-hierarchische-dimension">7. Erweiterte
+boolsche und hierarchische Dimension</h1>
+<p>Ein Delegat kann auch boolesche Mengenoperationen oder Operationen
+der Veränderung von Hierarchiestruktur und Koordinaten ausführen:</p>
+<p>wobei:</p>
+<ul>
+<li><span class="math inline">𝒜</span> Grundrechenarten</li>
+<li><span class="math inline">𝒯</span> Topologie</li>
+<li><span class="math inline">ℋ</span> Objekt- und Typ-Hierarchie</li>
+<li><span class="math inline">ℬ</span> boolsche Mengenoperationen (AND,
+OR, NOT)</li>
+<li><span class="math inline">𝒞</span> Operationen auf Hierarchien und
+Koordinaten</li>
+</ul>
+<p>Beispielkombination:</p>
+<h1 id="zusammengefasste-formale-definition">8. Zusammengefasste formale
+Definition</h1>
+
+<h1 id="schlussaussage">9. Schlussaussage</h1>
+<script defer src="https://static.cloudflareinsights.com/beacon.min.js/vcd15cbe7772f49c399c6a5babf22c1241717689176015" integrity="sha512-ZpsOmlRQV6y907TI0dKBHq9Md29nnaEIPlkf84rnaERnq6zvWvPUqr2ft8M1aS28oN72PdrCzSjY4U6VaAw1EQ==" data-cf-beacon='{"version":"2024.11.0","token":"0357a45f23a943f08700f7f9af191ee6","r":1,"server_timing":{"name":{"cfCacheStatus":true,"cfEdge":true,"cfExtPri":true,"cfL4":true,"cfOrigin":true,"cfSpeedBrain":true},"location_startswith":null}}' crossorigin="anonymous"></script>
+</body>
+</html>

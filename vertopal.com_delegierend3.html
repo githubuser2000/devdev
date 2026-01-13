@@ -1,0 +1,322 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="" xml:lang="">
+<head>
+  <meta charset="utf-8" />
+  <meta name="generator" content="pandoc" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+  <title>Delegierende Programmierung als höheres Paradigma</title>
+  <style>
+    html {
+      line-height: 1.5;
+      font-family: Georgia, serif;
+      font-size: 20px;
+      color: #1a1a1a;
+      background-color: #fdfdfd;
+    }
+    body {
+      margin: 0 auto;
+      max-width: 36em;
+      padding-left: 50px;
+      padding-right: 50px;
+      padding-top: 50px;
+      padding-bottom: 50px;
+      hyphens: auto;
+      overflow-wrap: break-word;
+      text-rendering: optimizeLegibility;
+      font-kerning: normal;
+    }
+    @media (max-width: 600px) {
+      body {
+        font-size: 0.9em;
+        padding: 1em;
+      }
+      h1 {
+        font-size: 1.8em;
+      }
+    }
+    @media print {
+      body {
+        background-color: transparent;
+        color: black;
+        font-size: 12pt;
+      }
+      p, h2, h3 {
+        orphans: 3;
+        widows: 3;
+      }
+      h2, h3, h4 {
+        page-break-after: avoid;
+      }
+    }
+    p {
+      margin: 1em 0;
+    }
+    a {
+      color: #1a1a1a;
+    }
+    a:visited {
+      color: #1a1a1a;
+    }
+    img {
+      max-width: 100%;
+    }
+    h1, h2, h3, h4, h5, h6 {
+      margin-top: 1.4em;
+    }
+    h5, h6 {
+      font-size: 1em;
+      font-style: italic;
+    }
+    h6 {
+      font-weight: normal;
+    }
+    ol, ul {
+      padding-left: 1.7em;
+      margin-top: 1em;
+    }
+    li > ol, li > ul {
+      margin-top: 0;
+    }
+    blockquote {
+      margin: 1em 0 1em 1.7em;
+      padding-left: 1em;
+      border-left: 2px solid #e6e6e6;
+      color: #606060;
+    }
+    code {
+      font-family: Menlo, Monaco, 'Lucida Console', Consolas, monospace;
+      font-size: 85%;
+      margin: 0;
+    }
+    pre {
+      margin: 1em 0;
+      overflow: auto;
+    }
+    pre code {
+      padding: 0;
+      overflow: visible;
+      overflow-wrap: normal;
+    }
+    .sourceCode {
+     background-color: transparent;
+     overflow: visible;
+    }
+    hr {
+      background-color: #1a1a1a;
+      border: none;
+      height: 1px;
+      margin: 1em 0;
+    }
+    table {
+      margin: 1em 0;
+      border-collapse: collapse;
+      width: 100%;
+      overflow-x: auto;
+      display: block;
+      font-variant-numeric: lining-nums tabular-nums;
+    }
+    table caption {
+      margin-bottom: 0.75em;
+    }
+    tbody {
+      margin-top: 0.5em;
+      border-top: 1px solid #1a1a1a;
+      border-bottom: 1px solid #1a1a1a;
+    }
+    th {
+      border-top: 1px solid #1a1a1a;
+      padding: 0.25em 0.5em 0.25em 0.5em;
+    }
+    td {
+      padding: 0.125em 0.5em 0.25em 0.5em;
+    }
+    header {
+      margin-bottom: 4em;
+      text-align: center;
+    }
+    #TOC li {
+      list-style: none;
+    }
+    #TOC ul {
+      padding-left: 1.3em;
+    }
+    #TOC > ul {
+      padding-left: 0;
+    }
+    #TOC a:not(:hover) {
+      text-decoration: none;
+    }
+    code{white-space: pre-wrap;}
+    span.smallcaps{font-variant: small-caps;}
+    div.columns{display: flex; gap: min(4vw, 1.5em);}
+    div.column{flex: auto; overflow-x: auto;}
+    div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+    ul.task-list{list-style: none;}
+    ul.task-list li input[type="checkbox"] {
+      width: 0.8em;
+      margin: 0 0.8em 0.2em -1.6em;
+      vertical-align: middle;
+    }
+  </style>
+  <script
+  src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js"
+  type="text/javascript"></script>
+  <!--[if lt IE 9]>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv-printshiv.min.js"></script>
+  <![endif]-->
+</head>
+<body>
+<header id="title-block-header">
+<h1 class="title">Delegierende Programmierung als höheres Paradigma</h1>
+</header>
+<h1 class="unnumbered" id="ausgangsfrage">Ausgangsfrage</h1>
+<p>Wenn es neben imperativer und deklarativer Programmierung ein
+höheres, delegierendes Programmierparadigma mit Delegaten gäbe, in dem
+man Funktionen beziehungsweise Delegaten addieren, subtrahieren und
+multiplizieren kann, unter Einbeziehung von Arithmetik und
+Topologie:</p>
+<blockquote>
+<p>Zeige, dass dann manche Funktionsaufrufe mit Delegaten noch einmal
+einfacher sind als mit Haskell als deklarativ-funktionaler
+Programmiersprache und noch mehr als mit imperativer, prozeduraler
+Programmierung.</p>
+</blockquote>
+<h1 class="unnumbered" id="vergleich-der-paradigmen">1. Vergleich der
+Paradigmen</h1>
+<h2 class="unnumbered" id="imperativ-prozedural">1.1 Imperativ /
+prozedural</h2>
+<p>Imperative Programmierung beschreibt Programme primär als Sequenzen
+von Befehlen mit explizitem Kontrollfluss:</p>
+<ul>
+<li><p>Reihenfolge ist semantisch wesentlich,</p></li>
+<li><p>Zustand ist explizit,</p></li>
+<li><p>Kombination von Verhalten erfolgt durch
+Kontrollstrukturen.</p></li>
+</ul>
+<p>Funktionsaufrufe sind an Ablauf, Variablen und Bedingungen gebunden.
+Die semantische Bedeutung ist über viele Codezeilen verteilt.</p>
+<h2 class="unnumbered" id="deklarativ-funktional-z.-b.-haskell">1.2
+Deklarativ / funktional (z. B. Haskell)</h2>
+<p>Funktionale Programmierung beschreibt Programme als Transformationen
+von Werten:</p>
+<p><span class="math display">\[f \colon A \to B\]</span></p>
+<p>Kombination erfolgt durch:</p>
+<ul>
+<li><p>Funktionskomposition,</p></li>
+<li><p>Applicatives,</p></li>
+<li><p>Monaden.</p></li>
+</ul>
+<p>Dies reduziert expliziten Zustand, führt jedoch zu:</p>
+<ul>
+<li><p>geschachtelten Abstraktionen,</p></li>
+<li><p>komplexen Typkonstruktionen,</p></li>
+<li><p>linear-sequentieller Semantik von Effekten.</p></li>
+</ul>
+<h1 class="unnumbered" id="einführung-des-delegierenden-paradigmas">2.
+Einführung des delegierenden Paradigmas</h1>
+<p>Das delegierende Paradigma hebt die Abstraktionsebene erneut an.</p>
+<p>Ein Delegat ist kein bloßer Funktionswert, sondern ein
+<em>Bedeutungs- oder Wirkungsobjekt</em>.</p>
+<p><span class="math display">\[D := \langle \text{Typ}, \text{Wirkung},
+\text{Kontext} \rangle\]</span></p>
+<p>Delegaten sind:</p>
+<ul>
+<li><p>erstklassig,</p></li>
+<li><p>algebraisch kombinierbar,</p></li>
+<li><p>topologisch strukturiert,</p></li>
+<li><p>ausführbar.</p></li>
+</ul>
+<h1 class="unnumbered" id="algebraische-kombination-von-delegaten">3.
+Algebraische Kombination von Delegaten</h1>
+<p>Im delegierenden Paradigma existieren wohldefinierte Operationen:</p>
+<p><span class="math display">\[D_1 + D_2 \quad
+D_1 - D_2 \quad
+D_1 \cdot D_2\]</span></p>
+<p>Diese Operationen wirken nicht auf Rückgabewerte, sondern auf die
+Bedeutung der Delegaten selbst.</p>
+<p>Interpretation:</p>
+<ul>
+<li><p>Addition: Überlagerung von Wirkungen,</p></li>
+<li><p>Subtraktion: Ausschluss oder Maskierung,</p></li>
+<li><p>Multiplikation: Verschränkung oder Abhängigkeit.</p></li>
+</ul>
+<p>Damit wird ein gesamter Verarbeitungsablauf zu einer einzigen
+algebraischen Formel.</p>
+<h1 class="unnumbered" id="vergleich-an-einem-funktionsaufruf">4.
+Vergleich an einem Funktionsaufruf</h1>
+<p>Angenommen, ein Wert soll:</p>
+<ul>
+<li><p>validiert,</p></li>
+<li><p>geloggt,</p></li>
+<li><p>transformiert,</p></li>
+<li><p>eingeschränkt</p></li>
+</ul>
+<p>werden.</p>
+<h2 class="unnumbered" id="imperativ">4.1 Imperativ</h2>
+<p>Die Bedeutung verteilt sich auf:</p>
+<ul>
+<li><p>mehrere Kontrollstrukturen,</p></li>
+<li><p>Bedingungen,</p></li>
+<li><p>temporäre Variablen.</p></li>
+</ul>
+<p>Entfernung oder Hinzufügung eines Aspekts erfordert strukturelle
+Codeänderungen.</p>
+<h2 class="unnumbered" id="funktional-haskell">4.2 Funktional
+(Haskell)</h2>
+<p>Die Bedeutung wird durch Monadenstapel oder Funktionskomposition
+ausgedrückt:</p>
+<ul>
+<li><p>semantisch dichter als imperativ,</p></li>
+<li><p>aber typologisch und syntaktisch komplex.</p></li>
+</ul>
+<p>Kombination ist möglich, aber nicht algebraisch transparent.</p>
+<h2 class="unnumbered" id="delegierend">4.3 Delegierend</h2>
+<p>Der gesamte Ablauf wird als Delegatenkombination geschrieben:</p>
+<p><span class="math display">\[D = (V + L + T) \cdot R\]</span></p>
+<p>Der Aufruf reduziert sich auf:</p>
+<p><span class="math display">\[D(x)\]</span></p>
+<p>Hinzufügen oder Entfernen eines Aspekts geschieht lokal:</p>
+<p><span class="math display">\[D - L, \quad D + 2T\]</span></p>
+<p>Keine Kontrollstruktur, keine Monaden, keine Reihenfolgeannahmen auf
+Quelltextebene.</p>
+<h1 class="unnumbered" id="rolle-der-topologie">5. Rolle der
+Topologie</h1>
+<p>Delegaten sind nicht nur algebraische Objekte, sondern liegen in
+einem Wirkungsraum mit topologischer Struktur.</p>
+<ul>
+<li><p>Nähe zwischen Delegaten entspricht ähnlicher Wirkung,</p></li>
+<li><p>Glättung ersetzt harte Kontrollentscheidungen,</p></li>
+<li><p>Randbedingungen ersetzen explizite Verzweigungen.</p></li>
+</ul>
+<p>Damit wird Reihenfolge durch räumliche Struktur ersetzt.</p>
+<h1 class="unnumbered" id="formale-überlegenheit">6. Formale
+Überlegenheit</h1>
+<p>Für jede imperative Prozedur <span class="math inline">\(P\)</span>
+existiert eine funktionale Darstellung <span
+class="math inline">\(F\)</span> mit höherem Abstraktionsgrad.</p>
+<p>Für jede funktionale Darstellung <span
+class="math inline">\(F\)</span> existiert eine delegierende Darstellung
+<span class="math inline">\(D\)</span> mit geringerer kombinatorischer
+Komplexität:</p>
+<p><span class="math display">\[\text{AST-Tiefe}(D) &lt;
+\text{AST-Tiefe}(F) &lt; \text{AST-Tiefe}(P)\]</span></p>
+<p>Der Grund ist, dass Delegaten zusätzliche algebraische und
+topologische Struktur tragen, die Funktionen nicht besitzen.</p>
+<h1 class="unnumbered" id="schlussfolgerung">7. Schlussfolgerung</h1>
+<p>Delegierende Programmierung arbeitet auf einer höheren Ebene als
+imperative und deklarativ-funktionale Programmierung.</p>
+<p>Sie kombiniert:</p>
+<ul>
+<li><p>Ausführbarkeit,</p></li>
+<li><p>Algebra,</p></li>
+<li><p>Topologie,</p></li>
+<li><p>Bedeutung.</p></li>
+</ul>
+<p><span class="math display">\[\boxed{
+\text{Manche Funktionsaufrufe sind delegierend strikter einfacher als
+funktional,
+und funktional einfacher als imperativ}
+}\]</span></p>
+<script defer src="https://static.cloudflareinsights.com/beacon.min.js/vcd15cbe7772f49c399c6a5babf22c1241717689176015" integrity="sha512-ZpsOmlRQV6y907TI0dKBHq9Md29nnaEIPlkf84rnaERnq6zvWvPUqr2ft8M1aS28oN72PdrCzSjY4U6VaAw1EQ==" data-cf-beacon='{"version":"2024.11.0","token":"0357a45f23a943f08700f7f9af191ee6","r":1,"server_timing":{"name":{"cfCacheStatus":true,"cfEdge":true,"cfExtPri":true,"cfL4":true,"cfOrigin":true,"cfSpeedBrain":true},"location_startswith":null}}' crossorigin="anonymous"></script>
+</body>
+</html>
