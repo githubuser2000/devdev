@@ -1,0 +1,65 @@
+\section{Besondere Funktionsverwendungen deklarativ-funktionaler Sprachen}
+
+\subsection{Haskell -- Funktionen als algebraische Objekte}
+
+\subsubsection{Funktionen mit Gesetzen}
+In Haskell sind Funktionen algebraischen Strukturen unterworfen:
+Functor, Applicative, Monad, Semigroup, Monoid, Category, Arrow.
+Man programmiert keine Abläufe, sondern Gesetzssysteme, die der Compiler erzwingt.
+
+\subsubsection{Funktionen über Typkonstruktoren}
+Funktionen operieren über ganze Typfamilien:
+\[
+f : \text{Functor } f \Rightarrow f\,a \rightarrow f\,b
+\]
+Iteration wird durch Strukturerhaltung ersetzt.
+
+\subsubsection{Komposition statt Kontrolle}
+\[
+result = transform \circ validate \circ parse
+\]
+Kontrollfluss entsteht aus Komposition, nicht aus Befehlen.
+
+\subsection{Idris 2 -- Funktionen als Beweise}
+
+\subsubsection{Abhängige Typen}
+Typen dürfen Werte enthalten:
+\[
+append : \text{Vect } n\,a \rightarrow \text{Vect } m\,a \rightarrow \text{Vect } (n+m)\,a
+\]
+Fehler werden beim Kompilieren ausgeschlossen.
+
+\subsubsection{Programme als logische Aussagen}
+Funktionen können Beweise sein:
+\[
+plusZeroRightNeutral : (n : Nat) \rightarrow n + 0 = n
+\]
+
+\subsubsection{Totalität}
+Idris erzwingt Terminierung und vollständige Fallunterscheidung.
+
+\subsection{Lisp -- Funktionen als formbare Syntax}
+
+\subsubsection{Code als Daten}
+Code ist eine Datenstruktur und kann funktional transformiert werden.
+
+\subsubsection{Makros}
+Makros transformieren abstrakte Syntaxbäume und erzeugen neue Sprachkonstrukte.
+
+\subsubsection{Sprachen als Ergebnis von Funktionen}
+DSLs entstehen als funktionale Artefakte.
+
+\subsection{Scala -- Funktionen als Integrationswerkzeug}
+
+\subsubsection{Algebraische Architektur}
+Case Classes und Pattern Matching trennen Daten von Verhalten.
+
+\subsubsection{Kontextabhängige Funktionen}
+Funktionen verlangen implizite Fähigkeiten anstatt expliziter Objekte.
+
+\subsubsection{Effekte als Werte}
+Seiteneffekte werden beschrieben, nicht ausgeführt.
+
+\subsection{Gemeinsamer Kern}
+Funktionen beschreiben Wahrheit, nicht Ablauf.
+

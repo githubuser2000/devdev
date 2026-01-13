@@ -1,0 +1,66 @@
+\documentclass[a4paper,11pt]{article}
+
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage[ngerman]{babel}
+\usepackage{amsmath,amssymb}
+
+\title{Besondere Funktionsverwendungen deklarativ-funktionaler Sprachen}
+\author{}
+\date{}
+
+\begin{document}
+
+\maketitle
+
+\section{Haskell -- Funktionen als algebraische Objekte}
+
+\subsection{Funktionen mit Gesetzen}
+In Haskell sind Funktionen algebraischen Strukturen unterworfen:
+Functor, Applicative, Monad, Semigroup, Monoid, Category, Arrow.
+Man programmiert keine Abläufe, sondern Gesetzssysteme.
+
+\subsection{Funktionen über Typkonstruktoren}
+Funktionen operieren über ganze Typfamilien:
+\[
+f : \text{Functor } f \Rightarrow f\,a \rightarrow f\,b
+\]
+
+\subsection{Komposition statt Kontrolle}
+\[
+result = transform \circ validate \circ parse
+\]
+
+\section{Idris 2 -- Funktionen als Beweise}
+
+\subsection{Abhängige Typen}
+\[
+append : \text{Vect } n\,a \rightarrow \text{Vect } m\,a \rightarrow \text{Vect } (n+m)\,a
+\]
+
+\subsection{Programme als logische Aussagen}
+\[
+plusZeroRightNeutral : (n : Nat) \rightarrow n + 0 = n
+\]
+
+\subsection{Totalität}
+Alle Fälle müssen abgedeckt sein, Terminierung ist garantiert.
+
+\section{Lisp -- Funktionen als formbare Syntax}
+
+\subsection{Code als Daten}
+Programme sind Datenstrukturen.
+
+\subsection{Makros}
+Makros transformieren abstrakte Syntaxbäume.
+
+\section{Scala -- Funktionen als Integrationswerkzeug}
+
+\subsection{Effekte als Werte}
+Seiteneffekte werden beschrieben, nicht ausgeführt.
+
+\section{Gemeinsamer Kern}
+Funktionen beschreiben Wahrheit, nicht Ablauf.
+
+\end{document}
+
