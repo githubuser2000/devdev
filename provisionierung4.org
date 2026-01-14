@@ -1,0 +1,143 @@
+* Lehrstunde 4: Drift-Überwachung und automatische Korrektur
+
+** 1. Drift verstehen
+
+Drift = Abweichung des aktuellen Systemzustands vom Sollzustand.
+
+Ursachen:
+
+- Manuelle Änderungen
+- Externe Automatisierungen (Cronjobs, andere Tools)
+- Nicht-idempotente Ressourcen
+- Race Conditions zwischen Services
+
+Drift ist die wichtigste Ursache für unvorhersehbares Verhalten in großen Infrastrukturen.
+
+---
+
+** 2. Drift-Erkennung
+
+Chef:
+
+- chef-client überprüft alle Ressourcen auf dem Node  
+- Abweichungen werden korrigiert oder gemeldet  
+- Run-Logs zeigen welche Ressourcen geändert wurden
+
+Puppet:
+
+- puppet agent überprüft den Catalog gegen den aktuellen Zustand  
+- nur Abweichungen werden angewendet  
+- reporting liefert Drift-Informationen für zentrale Übersicht
+
+---
+
+** 3. Automatische Korrektur
+
+Beide Systeme ermöglichen:
+
+- periodische Runs (z.B. alle 30 Minuten)  
+- idempotente Ressourcen sorgen für sichere Wiederherstellung  
+
+Beispiel:
+
+- Datei `/opt/app/config.yml` fehlt  
+- Service `nginx` läuft nicht  
+- Provisionierung erkennt Abweichung → Datei wird erzeugt, Service gestartet
+
+Wichtig: **Nur deklarierte Ressourcen können automatisch korrigiert werden.**  
+
+---
+
+** 4. Monitoring der Drift
+
+Empfehlungen:
+
+- Chef: Reporting-Tools (Opscode Chef Automate)  
+- Puppet: PuppetDB + Puppet Enterprise Console  
+
+Ziele:
+
+- Abweichungen visualisieren  
+- Trends erkennen (welche Ressourcen driften häufig)  
+- Ursachen analysieren
+
+---
+
+** 5. Fehlerklassen bei Drift
+
+*** Klasse I – Ressourcenkonflikt
+
+- Zwei Ressourcen versuchen denselben Zustand zu setzen  
+- Beispiel: Zwei Profile ändern denselben Config-Parameter
+
+*** Klasse II – Timing/Race
+
+- Services starten bevor Konfiguration vorhanden  
+- Lösung: Abhängigkeiten explizit angeben (`require`, `before`, `notifies`)
+
+*** Klasse III – externe Eingriffe
+
+- Menschen oder Tools verändern System  
+- Lösung: kürzere Run-Intervalle, Audit, Alerts
+
+---
+
+** 6. Fortgeschrittene Techniken
+
+- **Event-Handler / Notifies** (Chef: `notifies`, Puppet: `notify`)  
+- **Guard Conditions / Only-If**  
+- **Resource Abhängigkeiten explizit modellieren**  
+- **Temporäre Drift akzeptieren, langfristige Konvergenz sichern**
+
+---
+
+** 7. Skalierung auf große Flotten
+
+- Nodes gruppieren nach Rollen & Environments  
+- Secrets zentral halten (Vault/Hiera)  
+- Reporting zentralisieren  
+- Drift-Logs analysieren und auf häufige Ursachen reagieren
+
+---
+
+** 8. Praktische Übung
+
+1. Simuliere Drift:
+
+#+begin_src shell
+sudo rm /opt/app/config.yml
+sudo systemctl stop nginx
+#+end_src
+
+2. Chef: `chef-client`  
+3. Puppet: `puppet apply app.pp`  
+
+- Prüfe Logs: Welche Ressourcen wurden geändert?  
+- Analysiere, warum der Fixpunkt erreicht wurde oder nicht  
+
+4. Erweiterung:  
+- Plane einen Cronjob, der absichtlich Drift erzeugt  
+- Beobachte, wie beide Systeme den Sollzustand wiederherstellen
+
+---
+
+** 9. Zusammenfassung
+
+- Drift ist unvermeidbar, aber kontrollierbar  
+- Idempotente Ressourcen sind Pflicht  
+- Abhängigkeitsgraphen sichern Korrektheit  
+- Monitoring und Reporting sind essentiell für Skalierbarkeit  
+- Chef → dynamische Korrektur, mehr Flexibilität  
+- Puppet → statische Korrektur, sehr stabil, gute Visualisierung  
+
+---
+
+** 10. Ausblick auf Lehrstunde 5
+
+Optionen:
+
+A. Vergleich mit Nix/Guix: reine Fixpunktmodelle, deklarative Provisionierung  
+B. Kubernetes als deklaratives System  
+C. Mini-Projekt: Chef + Puppet parallel auf derselben VM inkl. Rollen, Profile, Environments und Secrets  
+
+Wähle den nächsten Schritt.
