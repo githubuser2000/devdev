@@ -1,0 +1,180 @@
+---
+
+# 📗 ORG-MODE VERSION
+
+```org
+* Provisionierung mit Chef und Puppet – Parallel erklärt
+
+** Zielzustand
+
+Ein Linux-System soll *immer* folgenden Zustand haben:
+
+1. User =deploy= existiert
+2. =/opt/app/config.yml= existiert mit definiertem Inhalt
+3. NGINX ist installiert, aktiviert und läuft
+4. Bei Config-Änderung wird NGINX neu geladen
+
+Das ist *Provisionierung*, nicht Setup.
+
+---
+
+** Abstrakter Zustandsgraph
+
+#+begin_example
+User[deploy]
+   ↓
+File[/opt/app/config.yml] → Service[nginx]
+   ↑
+Package[nginx]
+#+end_example
+
+Chef und Puppet erzeugen denselben Ressourcengraphen.
+
+---
+
+* Teil A – Chef
+
+** Struktur
+
+#+begin_example
+cookbooks/
+└── app/
+    ├── recipes/
+    │   └── default.rb
+#+end_example
+
+** Recipe
+
+#+begin_src ruby
+user 'deploy' do
+  home '/home/deploy'
+  shell '/bin/bash'
+end
+
+directory '/opt/app' do
+  owner 'deploy'
+  group 'deploy'
+  mode '0755'
+end
+
+file '/opt/app/config.yml' do
+  content <<~EOF
+    env: production
+    port: 8080
+  EOF
+  owner 'deploy'
+  group 'deploy'
+  mode '0644'
+  notifies :reload, 'service[nginx]'
+end
+
+package 'nginx'
+
+service 'nginx' do
+  action [:enable, :start]
+end
+#+end_src
+
+** Semantik
+
+- Aufbau eines Resource Graphs
+- Idempotente Konvergenz
+- Notifies erzeugen gerichtete Abhängigkeiten
+- Ruby erlaubt programmatische Logik
+
+Chef ist ein *programmgesteuertes Zustandsmodell*.
+
+---
+
+* Teil B – Puppet
+
+** Struktur
+
+#+begin_example
+app.pp
+#+end_example
+
+** Manifest
+
+#+begin_src puppet
+user { 'deploy':
+  ensure => present,
+  shell => '/bin/bash',
+  home  => '/home/deploy',
+}
+
+file { '/opt/app':
+  ensure => directory,
+  owner  => 'deploy',
+  group  => 'deploy',
+  mode   => '0755',
+}
+
+file { '/opt/app/config.yml':
+  ensure  => file,
+  content => "env: production\nport: 8080\n",
+  owner   => 'deploy',
+  group   => 'deploy',
+  mode    => '0644',
+  notify  => Service['nginx'],
+}
+
+package { 'nginx':
+  ensure => installed,
+}
+
+service { 'nginx':
+  ensure => running,
+  enable => true,
+}
+#+end_src
+
+** Semantik
+
+- Catalog-Kompilierung
+- Constraint-Erfüllung
+- Keine imperativen Schritte
+- Strikte Deklaration
+
+Puppet ist ein *Constraint-Satisfaction-System*.
+
+---
+
+* Drift-Test
+
+#+begin_src shell
+sudo rm /opt/app/config.yml
+sudo systemctl stop nginx
+#+end_src
+
+Dann:
+
+- Chef: =chef-client=
+- Puppet: =puppet apply app.pp=
+
+Der Sollzustand wird wiederhergestellt.
+
+---
+
+* Vergleich
+
+| Aspekt        | Chef                  | Puppet                |
+|---------------+-----------------------+-----------------------|
+| Paradigma     | Programm + Zustand    | Reiner Zustand        |
+| Sprache       | Ruby DSL              | Puppet DSL            |
+| Logik         | Hoch                  | Begrenzt              |
+| Skalierung    | Gut                   | Sehr gut              |
+| Fehlertoleranz| Flexibel              | Strikt                |
+
+---
+
+* Kerngedanke
+
+Provisionierung ist:
+
+#+begin_quote
+Eine monotone Fixpunktiteration im Raum möglicher Systemzustände.
+#+end_quote
+
+Chef = Algorithmus  
+Puppet = Spezifikation

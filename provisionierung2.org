@@ -1,0 +1,188 @@
+* Lehrstunde 2: Zustandslogik, Konvergenz und Fehlerklassen
+
+** 1. Das eigentliche Objekt: der Systemzustandsraum
+
+Ein System ist kein „Server“, sondern ein Zustandsvektor.
+
+Ein Systemzustand besteht aus Komponenten wie:
+
+- Benutzer
+- Dateien
+- Pakete
+- Services
+- Rechte
+- Netzwerk
+- Laufende Prozesse
+
+Provisionierung arbeitet nicht mit Befehlen, sondern mit Relationen auf diesem Zustandsraum.
+
+Chef und Puppet definieren Transformationen von einem Zustand in einen anderen, mit dem Ziel, einen stabilen Zustand zu erreichen, der sich bei erneuter Anwendung nicht mehr verändert.
+
+---
+
+** 2. Idempotenz als Stabilitätskriterium
+
+Eine Resource ist korrekt definiert, wenn sie den Zustand nicht verändert, sobald der gewünschte Zustand bereits erreicht ist.
+
+Beispiele für idempotente Ressourcen:
+
+- Ein Paket ist installiert
+- Eine Datei existiert mit bestimmtem Inhalt
+- Ein Service läuft
+
+Fehlerklasse:
+
+Nicht-idempotente Ressourcen führen zu fortlaufenden Zustandsänderungen und verhindern Stabilität.
+
+Beispiel eines Fehlers:
+
+- Eine Resource hängt bei jedem Lauf neue Daten an eine Datei an
+- Der Zustand driftet bei jeder Ausführung weiter weg
+
+Solche Ressourcen haben keinen stabilen Endzustand.
+
+---
+
+** 3. Konvergenz ist keine Ausführungsreihenfolge
+
+Ein häufiges Missverständnis ist die Annahme, dass Provisionierung von oben nach unten ausgeführt wird.
+
+Das ist falsch.
+
+Chef und Puppet erzeugen intern einen Abhängigkeitsgraphen aus Ressourcen.
+
+- Ressourcen sind Knoten
+- Abhängigkeiten sind gerichtete Kanten
+
+Die tatsächliche Ausführung erfolgt anhand dieser Abhängigkeiten, nicht anhand der Textreihenfolge im Manifest oder Recipe.
+
+---
+
+** 4. Drei Klassen von Provisionierungsfehlern
+
+*** Klasse I: Spezifikationsfehler
+
+Der gewünschte Zielzustand ist widersprüchlich oder nicht erfüllbar.
+
+Beispiele:
+
+- Ein Service soll laufen, aber das zugehörige Paket ist nicht definiert
+- Eine Datei soll von einem Benutzer besessen werden, der nicht existiert
+
+Merkmal:
+Es existiert kein möglicher Systemzustand, der alle Anforderungen erfüllt.
+
+---
+
+*** Klasse II: Konvergenzfehler
+
+Der Zielzustand ist grundsätzlich erreichbar, wird aber nicht zuverlässig in einem Lauf erreicht.
+
+Ursachen:
+
+- Fehlende Abhängigkeiten
+- Race Conditions
+- Services starten vor der Konfiguration
+
+Typisches Symptom:
+Der zweite Lauf „repariert“ den ersten.
+
+---
+
+*** Klasse III: Drift-Wiederkehr
+
+Der Systemzustand wird von externen Faktoren regelmäßig verändert.
+
+Typische Ursachen:
+
+- Manuelle Eingriffe
+- Cronjobs
+- Andere Konfigurations- oder Deployment-Tools
+
+Lösungsansätze:
+
+- Häufigere Provisionierungsruns
+- Striktere Zustandsdefinitionen
+- Klare Ownership-Regeln
+
+---
+
+** 5. Chef und Puppet auf dieser Abstraktionsebene
+
+Chef:
+
+- Berechnet den Zielzustand dynamisch
+- Fehler zeigen sich häufig erst zur Laufzeit
+- Sehr ausdrucksstark durch Programmlogik
+
+Puppet:
+
+- Erstellt einen statischen Ressourcenkatalog
+- Erkennt manche Fehler bereits vor der Anwendung
+- Sehr stabil bei großen Ressourcengraphen
+
+Kurzfassung:
+
+Chef ist ein Algorithmus mit Nebenwirkungen.  
+Puppet ist eine Zustandsspezifikation.
+
+---
+
+** 6. Warum Provisionierung kein Deployment ist
+
+Deployment beschreibt das Übertragen von Code auf ein System.
+
+Provisionierung beschreibt die fortlaufende Annäherung eines Systems an einen stabilen Zielzustand.
+
+Wichtig:
+
+- Es gibt kein echtes Rollback
+- Ein Rollback ist lediglich ein neuer gewünschter Zustand
+- Provisionierung arbeitet immer vorwärts
+
+---
+
+** 7. Mentales Warnsignal für erfahrene Nutzer
+
+Wenn der Gedanke aufkommt:
+
+„Ich brauche nur kurz einen Shell-Befehl“
+
+dann liegt bereits ein Bruch des Provisionierungsmodells vor.
+
+Shell-Befehle sind:
+
+- imperativ
+- oft nicht idempotent
+- nicht zustandsbeschreibend
+
+In Chef und Puppet sind Shell-Befehle ein Notbehelf, kein Standardwerkzeug.
+
+---
+
+** 8. Übung zur Selbstkontrolle
+
+Frage:
+
+Ist eine Resource korrekt, die bei jedem Lauf einen Service neu startet, ohne den Zustand zu prüfen?
+
+Antwort:
+
+Nein.
+
+Ein Neustart beschreibt keinen Zustand, sondern eine Aktion.
+
+Korrekt ist es, den gewünschten Zustand zu beschreiben, zum Beispiel dass ein Service laufen soll.
+
+---
+
+** 9. Ausblick: nächste Lehrstunde
+
+Mögliche Vertiefungen:
+
+A. Rollen, Profile und Environments  
+B. Secrets und Datenfluss  
+C. Vergleich mit rein funktionalen Provisionierungssystemen  
+D. Kubernetes als deklaratives Zustandsmodell  
+
+Wähle bewusst den nächsten Schritt.

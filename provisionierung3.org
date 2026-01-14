@@ -1,0 +1,108 @@
+* Lehrstunde 3: Rollen, Profile, Environments und Secrets
+
+** 1. Rollen, Profile und Environments – Abstraktion von Systemen
+
+Provisionierung auf mehreren Systemen benötigt **Wiederverwendbarkeit** und **Struktur**.
+
+- **Role**: Definiert die Funktion eines Nodes (z.B. Webserver, Datenbankserver)  
+- **Profile**: Gruppiert Ressourcen, die wiederverwendbar sind  
+- **Environment**: Definiert Konfigurationsvarianten nach Einsatzgebiet (z.B. Produktion, Test, Staging)
+
+#+begin_example
+Node "web01":
+  Role: webserver
+  Environment: production
+  Profiles: [nginx, deploy_user, monitoring]
+#+end_example
+
+Vorteile:
+
+- Reduziert Redundanz
+- Klare Trennung von Logik und Parametern
+- Skalierbar auf viele Nodes
+
+---
+
+** 2. Rollen und Profile in Chef
+
+Chef implementiert Rollen und Profile über **Cookbooks** und **Attributes**.
+
+Struktur:
+
+- Cookbooks: enthalten Recipes und Libraries
+- Roles: definieren Recipes und Attribute für einen Node
+- Environments: überschreiben Attribute für bestimmte Umgebungen
+
+#+begin_example
+role "webserver" do
+  description "Webserver role"
+  run_list "recipe[nginx]", "recipe[deploy]"
+  default_attributes({
+    'nginx' => { 'port' => 8080 }
+  })
+end
+#+end_example
+
+Environments definieren z.B.:
+
+- production: nginx.port = 80
+- staging: nginx.port = 8080
+
+---
+
+** 3. Rollen und Profile in Puppet
+
+Puppet trennt **Role** und **Profile** konzeptionell:
+
+- **Profile**: gruppiert Ressourcen für Wiederverwendung  
+- **Role**: bindet Profile an einen Node  
+
+#+begin_example
+class profile::nginx {
+  package { 'nginx': ensure => installed }
+  service { 'nginx': ensure => running }
+}
+
+class role::webserver {
+  include profile::nginx
+  include profile::deploy_user
+}
+node 'web01.example.com' {
+  include role::webserver
+}
+#+end_example
+
+Environments definieren Variablen und können Hiera-Daten bereitstellen.
+
+---
+
+** 4. Secrets und sensibler Datenfluss
+
+Provisionierungssysteme dürfen keine Klartext-Passwörter oder Tokens speichern.
+
+Lösungen:
+
+- Chef: **Vault**  
+  - Verschlüsselte Datenbags  
+  - Zugriff nur über Node-Client
+- Puppet: **Hiera + eyaml**  
+  - Verschlüsselte Schlüssel  
+  - Nur Agenten mit Private Key können Daten entschlüsseln
+
+Best Practices:
+
+- Geheimnisse immer getrennt von Manifesten speichern  
+- Nur minimal benötigten Zugriff gewähren  
+- Versionskontrolle **ohne Secrets**  
+
+---
+
+** 5. Abhängigkeiten und Komposition
+
+Rollen/Profile erzeugen **Abhängigkeitsgraphen**:
+
+- Ein Role kann Profile referenzieren  
+- Ein Profile kann Ressourcen referenzieren  
+- Services, Dateien und Pakete bilden Knoten im Graphen  
+
+Topologische Sortierung sorgt für korrekte Anwendung:
